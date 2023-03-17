@@ -1,0 +1,8 @@
+@import "../utils/variables.scss";
+
+.input {
+  & input {
+    width: 100%;
+    height: 50px;
+  }
+}

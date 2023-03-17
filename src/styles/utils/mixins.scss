@@ -1,0 +1,8 @@
+@mixin flex($param, $type) {
+  display: flex;
+
+  @if ($param == "center&center") {
+    justify-content: center;
+    align-items: center;
+  }
+}
