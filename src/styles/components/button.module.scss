@@ -1,0 +1,15 @@
+@import "../utils/variables.scss";
+
+.button {
+  & button {
+    padding: 18px 12px;
+
+    color: white;
+    font-weight: 500;
+
+    background: black;
+
+    border: none;
+    border-radius: 5px;
+  }
+}

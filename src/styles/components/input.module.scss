@@ -1,8 +1,27 @@
 @import "../utils/variables.scss";
+@import "../utils/mixins.scss";
 
 .input {
+  & .badges {
+    margin: 0 0 5px 0;
+
+    @include flex("space-betweeb&center","");
+
+    & label:nth-child(2) {
+      color: red;
+    }
+  }
+
   & input {
     width: 100%;
-    height: 50px;
+    height: 46px;
+
+    border-radius: 5px;
+
+    border: 1px solid black;
+
+    &.error {
+      border: 1px solid red;
+    }
   }
 }

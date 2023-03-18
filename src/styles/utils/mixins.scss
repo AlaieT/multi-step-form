@@ -5,4 +5,13 @@
     justify-content: center;
     align-items: center;
   }
+
+  @if ($param == "space-between&center") {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @if($type == "col"){
+    flex-direction: columnh;
+  }
 }
