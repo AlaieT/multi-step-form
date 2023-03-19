@@ -1,5 +1,7 @@
 import React from "react";
 
+import classNames from "../../utils/classNames";
+
 import styles from "../../styles/components/input.module.scss";
 
 interface InputProps
@@ -9,9 +11,9 @@ interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, ...rest }, ref) => {
+  ({ label, error, className, ...rest }, ref) => {
     return (
-      <div className={styles.input}>
+      <div className={classNames(styles.input, className)}>
         <div className={styles.badges}>
           <label>{label}</label>
           {error && <label>{error}</label>}

@@ -3,9 +3,9 @@
 
 .input {
   & .badges {
-    margin: 0 0 5px 0;
+    margin: 0 0 8px 0;
 
-    @include flex("space-betweeb&center","");
+    @include flex("space-between&center", "");
 
     & label:nth-child(2) {
       color: red;
@@ -15,8 +15,9 @@
   & input {
     width: 100%;
     height: 46px;
+    padding: 0 16px;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     border: 1px solid black;
 
