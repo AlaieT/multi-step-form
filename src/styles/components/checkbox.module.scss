@@ -1,0 +1,13 @@
+.checkbox {
+  width: 20px;
+  height: 20px;
+
+  color: black;
+
+  border: 1px solid black;
+
+  &:checked {
+    color: white;
+    background: black;
+  }
+}

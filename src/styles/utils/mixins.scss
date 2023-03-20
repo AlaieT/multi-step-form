@@ -1,4 +1,4 @@
-@mixin flex($param, $type) {
+@mixin flex($param: null, $type: null) {
   display: flex;
 
   @if ($param == "center&center") {

@@ -6,8 +6,8 @@ import styles from "../../styles/components/input.module.scss";
 
 interface InputProps
   extends Omit<React.ComponentPropsWithoutRef<"input">, "children"> {
-  label: string;
-  error: string;
+  label?: string;
+  error?: string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(

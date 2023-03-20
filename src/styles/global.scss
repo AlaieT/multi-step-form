@@ -20,5 +20,5 @@ div[id="root"] {
   width: 100%;
   min-height: 100vh;
 
-  @include flex("center&center", "");
+  @include flex("center&center");
 }

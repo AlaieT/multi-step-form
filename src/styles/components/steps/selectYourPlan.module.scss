@@ -5,10 +5,21 @@
   width: 634px;
   padding: 42px 100px 16px 84px;
 
-  @include flex("center&end", "col");
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "A A A"
+    "B C D"
+    "E E E"
+    "F . G";
+
+  justify-content: space-between;
 
   & #header {
     width: 100%;
+    margin: 0 0 32px 0;
+
+    grid-area: A;
 
     & h1 {
       margin: 0 0 8px 0;
@@ -21,5 +32,59 @@
       font-size: 16px;
       font-weight: 400;
     }
+  }
+
+  & .option {
+    width: 138px;
+    height: 160px;
+    padding: 18px 0px 14px 14px;
+
+    border: 1px solid black;
+    border-radius: 8px;
+
+    & img {
+      margin: 0 0 40px 0;
+    }
+
+    & label {
+      margin: 0 0 4px 0;
+
+      font-weight: 500;
+
+      display: block;
+    }
+  }
+
+  & #switch {
+    height: 50px;
+    margin: 32px 0 116px 0;
+
+    grid-area: E;
+
+    background: #f3f3f3;
+
+    border-radius: 8px;
+
+    @include flex("center&center");
+
+    & label {
+      margin: 0px 25px;
+    }
+  }
+
+  & #go_back {
+    width: max-content;
+    padding-left: 0;
+    padding-right: 0;
+    
+    color: black;
+    
+    background: transparent;
+
+    grid-area: F;
+  }
+
+  & #next_step {
+    grid-area: G;
   }
 }

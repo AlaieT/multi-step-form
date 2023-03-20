@@ -1,0 +1,53 @@
+#setp {
+  width: 634px;
+  padding: 42px 100px 16px 84px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "A A A"
+    "B B B"
+    "C C C"
+    "D D D"
+    "F . G";
+
+  & #header {
+    width: 100%;
+    margin: 0 0 32px 0;
+
+    grid-area: A;
+
+    & h1 {
+      margin: 0 0 8px 0;
+
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    & h2 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .option {
+    height: 81px;
+    padding: 22px 22px;
+  }
+
+  & #go_back {
+    width: max-content;
+    padding-left: 0;
+    padding-right: 0;
+
+    color: black;
+
+    background: transparent;
+
+    grid-area: F;
+  }
+
+  & #next_step {
+    grid-area: G;
+  }
+}
