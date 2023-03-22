@@ -1,4 +1,7 @@
-#setp {
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+#step {
   width: 634px;
   padding: 42px 100px 16px 84px;
 
@@ -31,8 +34,40 @@
   }
 
   .option {
+    width: 100%;
     height: 81px;
     padding: 22px 22px;
+    margin: 0 0 16px 0;
+
+    border: 1px solid black;
+    border-radius: 8px;
+
+    @include flex("center&center");
+
+    & .title {
+      width: 100%;
+      margin: 0 0 0 24px;
+
+      & label {
+        margin: 0 0 5px 0;
+
+        font-weight: 500;
+      }
+
+      @include flex(null, "col");
+    }
+
+    &:nth-child(2) {
+      grid-area: B;
+    }
+
+    &:nth-child(3) {
+      grid-area: C;
+    }
+
+    &:nth-child(4) {
+      grid-area: D;
+    }
   }
 
   & #go_back {

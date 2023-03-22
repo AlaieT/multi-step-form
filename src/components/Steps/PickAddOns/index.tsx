@@ -16,12 +16,27 @@ const PickAddOns = () => {
       </div>
       <div className={styles.option}>
         <Checkbox />
+        <div className={styles.title}>
+          <label>Online service</label>
+          <p>Access to multiplayer games</p>
+        </div>
+        <span>+$10/yr</span>
       </div>
       <div className={styles.option}>
         <Checkbox />
+        <div className={styles.title}>
+          <label>Larger storage</label>
+          <p>Extra 1TB of cloud save</p>
+        </div>
+        <span>+$20/yr</span>
       </div>
       <div className={styles.option}>
         <Checkbox />
+        <div className={styles.title}>
+          <label>Customizable profile</label>
+          <p>Custom theme on your profile</p>
+        </div>
+        <span>+$20/yr</span>
       </div>
       <Button id={styles.go_back}>Go Back</Button>
       <Button id={styles.next_step}>Next Step</Button>

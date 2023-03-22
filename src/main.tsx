@@ -7,6 +7,6 @@ import "./styles/global.scss";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Steps.SelectYourPlan />
+    <Steps.PickAddOns />
   </React.StrictMode>
 );
