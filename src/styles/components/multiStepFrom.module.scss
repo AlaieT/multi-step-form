@@ -1,0 +1,82 @@
+@import "../utils/variables.scss";
+@import "../utils/mixins.scss";
+
+#box {
+  width: 940px;
+  height: 600px;
+  padding: 16px;
+
+  border-radius: 8px;
+
+  box-shadow: 5px 5px 15px rgb(220, 220, 220);
+
+  @include flex();
+
+  & #steps {
+    width: 274px;
+    height: 568px;
+    padding: 40px 0 0 30px;
+
+    background-image: url("../../../public/images/bg-sidebar-desktop.svg");
+
+    & nav {
+      & ul {
+        list-style: none;
+
+        & li {
+          cursor: pointer;
+
+          width: 100%;
+          margin: 0 0 30px 0;
+
+          color: white;
+
+          display: grid;
+          grid-template-areas: "A B" "A C";
+
+          justify-content: flex-start;
+          align-items: center;
+
+          & label {
+            font-size: 10px;
+
+            grid-area: B;
+          }
+
+          & h3 {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+
+            grid-area: C;
+          }
+
+          &:last-child {
+            margin: 0;
+          }
+
+          &::before {
+            width: 32px;
+            height: 32px;
+            margin: 0 15px 0 0;
+
+            border: 1px solid white;
+            border-radius: 16px;
+
+            grid-area: A;
+
+            @include flex("center&center");
+          }
+
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              &::before {
+                content: "#{$i}";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

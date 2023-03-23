@@ -1,0 +1,125 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+#step {
+  width: 634px;
+  padding: 42px 100px 16px 84px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "A A A"
+    "B B B"
+    "C C C"
+    "F . G";
+
+  & #header {
+    width: 100%;
+    margin: 0 0 32px 0;
+
+    grid-area: A;
+
+    & h1 {
+      margin: 0 0 8px 0;
+
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    & h2 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  & #info {
+    padding: 22px 24px;
+
+    background-color: rgb(241, 241, 241);
+
+    border-radius: 8px;
+
+    grid-area: B;
+
+    & #plan {
+      padding: 0 0 22px 0;
+
+      border-bottom: 1px solid black;
+
+      display: grid;
+
+      grid-template-areas:
+        "A C"
+        "B C";
+
+      justify-content: space-between;
+      align-items: center;
+
+      & label {
+        margin: 0 0 8px 0;
+
+        font-weight: 500;
+
+        grid-area: A;
+      }
+
+      & p {
+        &:nth-child(2) {
+          text-decoration: underline;
+
+          grid-area: B;
+        }
+
+        &:nth-child(3) {
+          font-weight: 600;
+
+          grid-area: C;
+        }
+      }
+    }
+
+    & .add_ons {
+      margin: 20px 0 20px 0;
+
+      &:last-child {
+        margin: 20px 0 0 0;
+      }
+
+      @include flex("space-between&center");
+    }
+  }
+
+  & #total {
+    margin: 0 0 128px 0;
+    padding: 22px 24px;
+
+    grid-area: C;
+
+    @include flex("space-between&center");
+
+    & span:first-child {
+      font-size: 18px;
+    }
+
+    & span:last-child {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  & #go_back {
+    width: max-content;
+    padding-left: 0;
+    padding-right: 0;
+
+    color: black;
+
+    background: transparent;
+
+    grid-area: F;
+  }
+
+  & #next_step {
+    grid-area: G;
+  }
+}
