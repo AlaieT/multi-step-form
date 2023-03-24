@@ -8,7 +8,9 @@
 
   border-radius: 8px;
 
-  box-shadow: 5px 5px 15px rgb(220, 220, 220);
+  box-shadow: 5px 5px 15px $shadow-color;
+
+  background-color: $background-white;
 
   @include flex();
 
@@ -100,13 +102,13 @@
 @media screen and (max-width: 940px) {
   #box {
     width: 375px;
-    height: 100%;
+    height: max-content;
     padding: 0;
 
     border-radius: 0;
     box-shadow: none;
 
-    background-color: rgb(223, 223, 223);
+    background-color: transparent;
 
     @include flex("center&center", "col");
 

@@ -23,6 +23,7 @@
       }
 
       & h2 {
+        color: $secondary-text-color;
         font-size: 16px;
         font-weight: 400;
       }
@@ -46,6 +47,10 @@
     width: 100%;
 
     @include flex("end&center");
+
+    & #next_step {
+      width: 124px;
+    }
   }
 }
 
@@ -62,6 +67,22 @@
       border-radius: 8px;
 
       background-color: white;
+
+      & #header {
+        & h1 {
+          font-size: 24px;
+        }
+      }
+
+      & #fields {
+        & .field {
+          font-size: 14px;
+
+          & input {
+            border-radius: 6px;
+          }
+        }
+      }
     }
 
     & #controls {

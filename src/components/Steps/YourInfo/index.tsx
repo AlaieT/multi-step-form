@@ -37,7 +37,7 @@ const YourInfo = ({}: YourInfoProps) => {
         </div>
       </div>
       <div id={styles.controls}>
-        <Button>Next Step</Button>
+        <Button id={styles.next_step}>Next Step</Button>
       </div>
     </div>
   );

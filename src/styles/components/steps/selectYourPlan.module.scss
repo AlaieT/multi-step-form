@@ -34,18 +34,28 @@
       }
 
       & h2 {
+        color: $secondary-text-color;
         font-size: 16px;
         font-weight: 400;
       }
     }
 
     & .option {
+      cursor: pointer;
+
       width: 138px;
       height: 160px;
       padding: 18px 0px 14px 14px;
 
-      border: 1px solid black;
+      border: 1px solid $secondary-text-color;
       border-radius: 8px;
+
+      &.selected,
+      &:hover {
+        border: 1px solid $plan-border-color;
+
+        background-color: $select-plan;
+      }
 
       & img {
         margin: 0 0 40px 0;
@@ -58,6 +68,10 @@
 
         display: block;
       }
+
+      & p {
+        color: $secondary-text-color;
+      }
     }
 
     & #switch {
@@ -67,7 +81,7 @@
 
       grid-area: E;
 
-      background: #f3f3f3;
+      background-color: $select-plan;
 
       border-radius: 8px;
 
@@ -89,12 +103,13 @@
       padding-left: 0;
       padding-right: 0;
 
-      color: black;
+      color: $secondary-text-color;
 
       background: transparent;
     }
 
     & #next_step {
+      width: 124px;
     }
   }
 }
@@ -113,12 +128,20 @@
 
       background-color: white;
 
-      @include flex("center&center","col");
+      @include flex("center&center", "col");
+
+      & #header {
+        & h1 {
+          font-size: 24px;
+        }
+      }
 
       & .option {
         width: 100%;
         height: 76px;
         margin: 0 0 12px 0;
+
+        border-radius: 6px;
 
         display: grid;
         grid-template-areas:
@@ -128,7 +151,7 @@
         justify-content: flex-start;
         align-items: center;
 
-        &:nth-child(4){
+        &:nth-child(4) {
           margin: 0;
         }
 
@@ -146,8 +169,12 @@
         }
       }
 
-      #swicth {
+      #switch {
         margin: 24px 0 0 0;
+
+        border-radius: 6px;
+
+        font-size: 14px;
       }
     }
 

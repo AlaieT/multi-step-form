@@ -31,10 +31,10 @@ const MultiStepForm = () => {
           </ul>
         </nav>
       </div>
-      {step == 0 && <Steps.YourInfo/>}
-      {step == 1 && <Steps.SelectYourPlan/>}
-      {step == 2 && <Steps.PickAddOns/>}
-      {step == 3 && <Steps.Summary/>}
+      {step == 0 && <Steps.YourInfo />}
+      {step == 1 && <Steps.SelectYourPlan />}
+      {step == 2 && <Steps.PickAddOns />}
+      {step == 3 && <Steps.Summary />}
     </div>
   );
 };
