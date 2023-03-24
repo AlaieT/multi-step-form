@@ -2,33 +2,73 @@
 @import "../../utils/mixins.scss";
 
 #step {
+  z-index: 2;
+
   width: 634px;
   padding: 42px 100px 16px 84px;
 
-  @include flex("center&end", "col");
+  @include flex("space-between&center", "col");
 
-  & #header {
+  & #content {
     width: 100%;
 
-    & h1 {
-      margin: 0 0 8px 0;
+    & #header {
+      width: 100%;
 
-      font-size: 32px;
-      font-weight: 600;
+      & h1 {
+        margin: 0 0 8px 0;
+
+        font-size: 32px;
+        font-weight: 600;
+      }
+
+      & h2 {
+        font-size: 16px;
+        font-weight: 400;
+      }
     }
 
-    & h2 {
-      font-size: 16px;
-      font-weight: 400;
+    & #fields {
+      width: 100%;
+      margin: 38px 0 0 0;
+
+      & .field {
+        margin: 0 0 20px 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
     }
   }
 
-  & #fields {
+  & #controls {
     width: 100%;
-    margin: 38px 0 92px 0;
 
-    & .field {
-      margin: 0 0 20px 0;
+    @include flex("end&center");
+  }
+}
+
+@media screen and (max-width: 940px) {
+  #step {
+    width: 375px;
+    padding: 0;
+
+    & #content {
+      width: 343px;
+      padding: 32px 24px 32px 24px;
+      margin: 0 0 121px 0;
+
+      border-radius: 8px;
+
+      background-color: white;
+    }
+
+    & #controls {
+      height: 72px;
+      padding: 0 16px 0 16px;
+
+      background-color: white;
     }
   }
 }
