@@ -1,0 +1,17 @@
+@import "../../utils/mixins.scss";
+
+#step {
+  z-index: 2;
+
+  width: 634px;
+  padding: 42px 100px 16px 84px;
+
+  @include flex("space-between&center", "col");
+}
+
+@media screen and (max-width: 940px) {
+  #step {
+    width: 375px;
+    padding: 0;
+  }
+}

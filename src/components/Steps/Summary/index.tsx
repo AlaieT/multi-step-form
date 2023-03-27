@@ -1,6 +1,7 @@
 import React from "react";
 
 import Button from "../../Button";
+import Wrap from "../Wrap";
 
 import styles from "../../../styles/components/steps/summary.module.scss";
 
@@ -8,7 +9,7 @@ interface SummaryProps {}
 
 const Summary = ({}: SummaryProps) => {
   return (
-    <div id={styles.step}>
+    <Wrap>
       <div id={styles.content}>
         <div id={styles.header}>
           <h1>Finishing up</h1>
@@ -38,7 +39,7 @@ const Summary = ({}: SummaryProps) => {
         <Button id={styles.go_back}>Go Back</Button>
         <Button id={styles.next_step}>Confirm</Button>
       </div>
-    </div>
+    </Wrap>
   );
 };
 

@@ -2,6 +2,7 @@ import React from "react";
 
 import ToggleSwitch from "../../ToggleSwitch";
 import Button from "../../Button";
+import Wrap from "../Wrap";
 
 import IconArcade from "../../../../public/images/icon-arcade.svg";
 import IconAdvanced from "../../../../public/images/icon-advanced.svg";
@@ -13,7 +14,7 @@ interface SelectYourPlanProps {}
 
 const SelectYourPlan = () => {
   return (
-    <div id={styles.step}>
+    <Wrap>
       <div id={styles.content}>
         <div id={styles.header}>
           <h1>Select your plan</h1>
@@ -44,7 +45,7 @@ const SelectYourPlan = () => {
         <Button id={styles.go_back}>Go Back</Button>
         <Button id={styles.next_step}>Next Step</Button>
       </div>
-    </div>
+    </Wrap>
   );
 };
 

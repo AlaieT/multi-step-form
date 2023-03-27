@@ -1,95 +1,81 @@
 @import "../../utils/variables.scss";
 @import "../../utils/mixins.scss";
 
-#step {
-  z-index: 2;
+#content {
+  width: 100%;
 
-  width: 634px;
-  padding: 42px 100px 16px 84px;
-
-  @include flex("space-between&center", "col");
-
-  & #content {
+  & #header {
     width: 100%;
 
-    & #header {
-      width: 100%;
+    & h1 {
+      margin: 0 0 8px 0;
 
-      & h1 {
-        margin: 0 0 8px 0;
-
-        font-size: 32px;
-        font-weight: 600;
-      }
-
-      & h2 {
-        color: $secondary-text-color;
-        font-size: 16px;
-        font-weight: 400;
-      }
+      font-size: 32px;
+      font-weight: 600;
     }
 
-    & #fields {
-      width: 100%;
-      margin: 38px 0 0 0;
-
-      & .field {
-        margin: 0 0 20px 0;
-
-        &:last-child {
-          margin: 0;
-        }
-      }
+    & h2 {
+      color: $secondary-text-color;
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 
-  & #controls {
+  & #fields {
     width: 100%;
+    margin: 38px 0 0 0;
 
-    @include flex("end&center");
+    & .field {
+      margin: 0 0 20px 0;
 
-    & #next_step {
-      width: 124px;
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 }
 
+#controls {
+  width: 100%;
+
+  @include flex("end&center");
+
+  & #next_step {
+    width: 124px;
+  }
+}
+
 @media screen and (max-width: 940px) {
-  #step {
-    width: 375px;
-    padding: 0;
+  #content {
+    width: 343px;
+    padding: 32px 24px 32px 24px;
+    margin: 0 0 121px 0;
 
-    & #content {
-      width: 343px;
-      padding: 32px 24px 32px 24px;
-      margin: 0 0 121px 0;
+    border-radius: 8px;
 
-      border-radius: 8px;
+    background-color: white;
 
-      background-color: white;
-
-      & #header {
-        & h1 {
-          font-size: 24px;
-        }
-      }
-
-      & #fields {
-        & .field {
-          font-size: 14px;
-
-          & input {
-            border-radius: 6px;
-          }
-        }
+    & #header {
+      & h1 {
+        font-size: 24px;
       }
     }
 
-    & #controls {
-      height: 72px;
-      padding: 0 16px 0 16px;
+    & #fields {
+      & .field {
+        font-size: 14px;
 
-      background-color: white;
+        & input {
+          border-radius: 6px;
+        }
+      }
     }
+  }
+
+  #controls {
+    height: 72px;
+    padding: 0 16px 0 16px;
+
+    background-color: white;
   }
 }

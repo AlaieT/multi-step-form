@@ -1,215 +1,201 @@
 @import "../../utils/variables.scss";
 @import "../../utils/mixins.scss";
 
-#step {
-  z-index: 2;
+#content {
+  width: 100%;
 
-  width: 634px;
-  padding: 42px 100px 16px 84px;
-
-  @include flex("space-between&center", "col");
-
-  & #content {
+  & #header {
     width: 100%;
+    margin: 0 0 32px 0;
 
-    & #header {
-      width: 100%;
-      margin: 0 0 32px 0;
+    grid-area: A;
 
-      grid-area: A;
+    & h1 {
+      margin: 0 0 8px 0;
 
-      & h1 {
-        margin: 0 0 8px 0;
-
-        font-size: 32px;
-        font-weight: 600;
-      }
-
-      & h2 {
-        color: $secondary-text-color;
-        font-size: 16px;
-        font-weight: 400;
-      }
+      font-size: 32px;
+      font-weight: 600;
     }
 
-    & #info {
-      padding: 22px 24px;
-
-      background-color: $select-plan;
-
-      border-radius: 8px;
-
-      grid-area: B;
-
-      & #plan {
-        padding: 0 0 22px 0;
-
-        border-bottom: 1px solid $shadow-color;
-
-        display: grid;
-
-        grid-template-areas:
-          "A C"
-          "B C";
-
-        justify-content: space-between;
-        align-items: center;
-
-        & label {
-          margin: 0 0 8px 0;
-
-          font-weight: 500;
-
-          grid-area: A;
-        }
-
-        & p {
-          &:nth-child(2) {
-            cursor: pointer;
-
-            color: $secondary-text-color;
-            font-size: 14px;
-            text-decoration: underline;
-
-            &:hover {
-              color: $select-input;
-            }
-
-            grid-area: B;
-          }
-
-          &:nth-child(3) {
-            font-weight: 600;
-
-            grid-area: C;
-          }
-        }
-      }
-
-      & .add_ons {
-        margin: 20px 0 20px 0;
-
-        color: $secondary-text-color;
-        font-size: 14px;
-
-        & span {
-          &:last-child {
-            color: $primary-text-color;
-          }
-        }
-
-        &:last-child {
-          margin: 20px 0 0 0;
-        }
-
-        @include flex("space-between&center");
-      }
-    }
-
-    & #total {
-      padding: 22px 24px;
-
-      grid-area: C;
-
-      @include flex("space-between&center");
-
-      & span:first-child {
-        color: $secondary-text-color;
-        font-size: 14px;
-      }
-
-      & span:last-child {
-        color: $select-input;
-        font-size: 20px;
-        font-weight: 600;
-      }
+    & h2 {
+      color: $secondary-text-color;
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 
-  & #controls {
-    width: 100%;
+  & #info {
+    padding: 22px 24px;
+
+    background-color: $select-plan;
+
+    border-radius: 8px;
+
+    grid-area: B;
+
+    & #plan {
+      padding: 0 0 22px 0;
+
+      border-bottom: 1px solid $shadow-color;
+
+      display: grid;
+
+      grid-template-areas:
+        "A C"
+        "B C";
+
+      justify-content: space-between;
+      align-items: center;
+
+      & label {
+        margin: 0 0 8px 0;
+
+        font-weight: 500;
+
+        grid-area: A;
+      }
+
+      & p {
+        &:nth-child(2) {
+          cursor: pointer;
+
+          color: $secondary-text-color;
+          font-size: 14px;
+          text-decoration: underline;
+
+          &:hover {
+            color: $select-input;
+          }
+
+          grid-area: B;
+        }
+
+        &:nth-child(3) {
+          font-weight: 600;
+
+          grid-area: C;
+        }
+      }
+    }
+
+    & .add_ons {
+      margin: 20px 0 20px 0;
+
+      color: $secondary-text-color;
+      font-size: 14px;
+
+      & span {
+        &:last-child {
+          color: $primary-text-color;
+        }
+      }
+
+      &:last-child {
+        margin: 20px 0 0 0;
+      }
+
+      @include flex("space-between&center");
+    }
+  }
+
+  & #total {
+    padding: 22px 24px;
+
+    grid-area: C;
 
     @include flex("space-between&center");
 
-    & #go_back {
-      width: max-content;
-      padding-left: 0;
-      padding-right: 0;
-
+    & span:first-child {
       color: $secondary-text-color;
-
-      background: transparent;
+      font-size: 14px;
     }
 
-    & #next_step {
-      width: 124px;
+    & span:last-child {
+      color: $select-input;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
 
-      background-color: $select-input;
+#controls {
+  width: 100%;
 
-      &:hover {
-        background-color: $summary-hover-button;
-      }
+  @include flex("space-between&center");
+
+  & #go_back {
+    width: max-content;
+    padding-left: 0;
+    padding-right: 0;
+
+    color: $secondary-text-color;
+
+    background: transparent;
+  }
+
+  & #next_step {
+    width: 124px;
+
+    background-color: $select-input;
+
+    &:hover {
+      background-color: $summary-hover-button;
     }
   }
 }
 
 @media screen and (max-width: 940px) {
-  #step {
-    width: 375px;
-    padding: 0;
+  #content {
+    width: 343px;
+    padding: 32px 24px 16px 24px;
+    margin: 0 0 160px 0;
 
-    & #content {
-      width: 343px;
-      padding: 32px 24px 16px 24px;
-      margin: 0 0 160px 0;
+    border-radius: 8px;
 
-      border-radius: 8px;
+    background-color: white;
 
-      background-color: white;
+    & #header {
+      & h1 {
+        font-size: 24px;
+      }
+    }
 
-      & #header {
-        & h1 {
-          font-size: 24px;
-        }
+    & #plan {
+      padding: 0 0 22px 0;
+
+      border-bottom: 1px solid $shadow-color;
+
+      display: grid;
+
+      grid-template-areas:
+        "A C"
+        "B C";
+
+      justify-content: space-between;
+      align-items: center;
+
+      & label {
+        font-size: 14px;
       }
 
-      & #plan {
-        padding: 0 0 22px 0;
-
-        border-bottom: 1px solid $shadow-color;
-
-        display: grid;
-
-        grid-template-areas:
-          "A C"
-          "B C";
-
-        justify-content: space-between;
-        align-items: center;
-
-        & label {
+      & p {
+        &:nth-child(3) {
           font-size: 14px;
         }
-
-        & p {
-          &:nth-child(3) {
-            font-size: 14px;
-          }
-        }
-      }
-
-      & #total {
-        & span:last-child {
-          font-size: 16px;
-        }
       }
     }
 
-    & #controls {
-      height: 72px;
-      padding: 0 16px 0 16px;
-
-      background-color: white;
+    & #total {
+      & span:last-child {
+        font-size: 16px;
+      }
     }
+  }
+
+  #controls {
+    height: 72px;
+    padding: 0 16px 0 16px;
+
+    background-color: white;
   }
 }

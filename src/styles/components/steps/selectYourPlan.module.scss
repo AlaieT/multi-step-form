@@ -1,188 +1,174 @@
 @import "../../utils/variables.scss";
 @import "../../utils/mixins.scss";
 
-#step {
-  z-index: 2;
+#content {
+  width: 100%;
 
-  width: 634px;
-  padding: 42px 100px 16px 84px;
+  display: grid;
+  grid-template-areas:
+    "A A A"
+    "B C D"
+    "E E E";
 
-  @include flex("space-between&center", "col");
+  justify-content: space-between;
 
-  & #content {
+  & #header {
     width: 100%;
+    margin: 0 0 32px 0;
 
-    display: grid;
-    grid-template-areas:
-      "A A A"
-      "B C D"
-      "E E E";
+    grid-area: A;
 
-    justify-content: space-between;
+    & h1 {
+      margin: 0 0 8px 0;
 
-    & #header {
-      width: 100%;
-      margin: 0 0 32px 0;
-
-      grid-area: A;
-
-      & h1 {
-        margin: 0 0 8px 0;
-
-        font-size: 32px;
-        font-weight: 600;
-      }
-
-      & h2 {
-        color: $secondary-text-color;
-        font-size: 16px;
-        font-weight: 400;
-      }
+      font-size: 32px;
+      font-weight: 600;
     }
 
-    & .option {
-      cursor: pointer;
-
-      width: 138px;
-      height: 160px;
-      padding: 18px 0px 14px 14px;
-
-      border: 1px solid $secondary-text-color;
-      border-radius: 8px;
-
-      &.selected,
-      &:hover {
-        border: 1px solid $plan-border-color;
-
-        background-color: $select-plan;
-      }
-
-      & img {
-        margin: 0 0 40px 0;
-      }
-
-      & label {
-        margin: 0 0 4px 0;
-
-        font-weight: 500;
-
-        display: block;
-      }
-
-      & p {
-        color: $secondary-text-color;
-      }
-    }
-
-    & #switch {
-      width: 100%;
-      height: 50px;
-      margin: 32px 0 0 0;
-
-      grid-area: E;
-
-      background-color: $select-plan;
-
-      border-radius: 8px;
-
-      @include flex("center&center");
-
-      & label {
-        margin: 0px 25px;
-      }
+    & h2 {
+      color: $secondary-text-color;
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 
-  & #controls {
-    width: 100%;
+  & .option {
+    cursor: pointer;
 
-    @include flex("space-between&center");
+    width: 138px;
+    height: 160px;
+    padding: 18px 0px 14px 14px;
 
-    & #go_back {
-      width: max-content;
-      padding-left: 0;
-      padding-right: 0;
+    border: 1px solid $secondary-text-color;
+    border-radius: 8px;
 
-      color: $secondary-text-color;
+    &.selected,
+    &:hover {
+      border: 1px solid $plan-border-color;
 
-      background: transparent;
+      background-color: $select-plan;
     }
 
-    & #next_step {
-      width: 124px;
+    & img {
+      margin: 0 0 40px 0;
+    }
+
+    & label {
+      margin: 0 0 4px 0;
+
+      font-weight: 500;
+
+      display: block;
+    }
+
+    & p {
+      color: $secondary-text-color;
+    }
+  }
+
+  & #switch {
+    width: 100%;
+    height: 50px;
+    margin: 32px 0 0 0;
+
+    grid-area: E;
+
+    background-color: $select-plan;
+
+    border-radius: 8px;
+
+    @include flex("center&center");
+
+    & label {
+      margin: 0px 25px;
     }
   }
 }
 
+#controls {
+  width: 100%;
+
+  @include flex("space-between&center");
+
+  & #go_back {
+    width: max-content;
+    padding-left: 0;
+    padding-right: 0;
+
+    color: $secondary-text-color;
+
+    background: transparent;
+  }
+
+  & #next_step {
+    width: 124px;
+  }
+}
+
 @media screen and (max-width: 940px) {
-  #step {
-    width: 375px;
-    padding: 0;
+  #content {
+    width: 343px;
+    padding: 32px 24px 16px 24px;
+    margin: 0 0 24px 0;
 
-    & #content {
-      width: 343px;
-      padding: 32px 24px 16px 24px;
-      margin: 0 0 24px 0;
+    border-radius: 8px;
 
-      border-radius: 8px;
+    background-color: white;
 
-      background-color: white;
+    @include flex("center&center", "col");
 
-      @include flex("center&center", "col");
-
-      & #header {
-        & h1 {
-          font-size: 24px;
-        }
-      }
-
-      & .option {
-        width: 100%;
-        height: 76px;
-        margin: 0 0 12px 0;
-
-        border-radius: 6px;
-
-        display: grid;
-        grid-template-areas:
-          "A B"
-          "A C";
-
-        justify-content: flex-start;
-        align-items: center;
-
-        &:nth-child(4) {
-          margin: 0;
-        }
-
-        & img {
-          margin: 0 12px 0 0;
-          grid-area: A;
-        }
-
-        & label {
-          grid-area: B;
-        }
-
-        & p {
-          grid-area: C;
-        }
-      }
-
-      #switch {
-        margin: 24px 0 0 0;
-
-        border-radius: 6px;
-
-        font-size: 14px;
+    & #header {
+      & h1 {
+        font-size: 24px;
       }
     }
 
-    & #controls {
-      height: 72px;
-      padding: 0 16px 0 16px;
+    & .option {
+      width: 100%;
+      height: 76px;
+      margin: 0 0 12px 0;
 
-      background-color: white;
+      border-radius: 6px;
+
+      display: grid;
+      grid-template-areas:
+        "A B"
+        "A C";
+
+      justify-content: flex-start;
+      align-items: center;
+
+      &:nth-child(4) {
+        margin: 0;
+      }
+
+      & img {
+        margin: 0 12px 0 0;
+        grid-area: A;
+      }
+
+      & label {
+        grid-area: B;
+      }
+
+      & p {
+        grid-area: C;
+      }
     }
+
+    & #switch {
+      margin: 24px 0 0 0;
+
+      border-radius: 6px;
+
+      font-size: 14px;
+    }
+  }
+
+  #controls {
+    height: 72px;
+    padding: 0 16px 0 16px;
+
+    background-color: white;
   }
 }
