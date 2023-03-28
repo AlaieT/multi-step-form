@@ -4,11 +4,11 @@ import Input from "../../Input";
 import Button from "../../Button";
 import Wrap from "../Wrap";
 
+import type { StepProps } from "../../MultiStepForm";
+
 import styles from "../../../styles/components/steps/yourInfo.module.scss";
 
-interface YourInfoProps {}
-
-const YourInfo = ({}: YourInfoProps) => {
+const YourInfo = ({ register, getValues, errors }: StepProps) => {
   return (
     <Wrap>
       <div id={styles.content}>
@@ -20,20 +20,26 @@ const YourInfo = ({}: YourInfoProps) => {
           <Input
             className={styles.field}
             label="Name"
-            error=""
+            error={errors.name?.message}
             placeholder="e.g. Stephen King"
+            defaultValue={getValues("name")}
+            {...register("name")}
           />
           <Input
             className={styles.field}
             label="Email Addres"
-            error=""
+            error={errors.email?.message}
             placeholder="e.g. stephenking@lorem.com"
+            defaultValue={getValues("email")}
+            {...register("email")}
           />
           <Input
             className={styles.field}
             label="Phone Number"
-            error="Some error!"
+            error={errors.phone?.message}
             placeholder="e.q. +1 234 567 890"
+            defaultValue={getValues("phone")}
+            {...register("phone")}
           />
         </div>
       </div>
@@ -44,5 +50,4 @@ const YourInfo = ({}: YourInfoProps) => {
   );
 };
 
-export type { YourInfoProps };
 export default YourInfo;

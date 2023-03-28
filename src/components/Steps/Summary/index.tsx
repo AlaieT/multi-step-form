@@ -3,11 +3,11 @@ import React from "react";
 import Button from "../../Button";
 import Wrap from "../Wrap";
 
+import type { StepProps } from "../../MultiStepForm";
+
 import styles from "../../../styles/components/steps/summary.module.scss";
 
-interface SummaryProps {}
-
-const Summary = ({}: SummaryProps) => {
+const Summary = ({ getValues }: Omit<StepProps, "register" | "errors">) => {
   return (
     <Wrap>
       <div id={styles.content}>
@@ -17,7 +17,7 @@ const Summary = ({}: SummaryProps) => {
         </div>
         <div id={styles.info}>
           <div id={styles.plan}>
-            <label>Arcade (Yearly)</label>
+            <label>Arcade ({getValues("yearly") ? "Yearly" : "Monthly"})</label>
             <p>Change</p>
             <p>$90/yr</p>
           </div>
@@ -43,5 +43,4 @@ const Summary = ({}: SummaryProps) => {
   );
 };
 
-export type { SummaryProps };
 export default Summary;

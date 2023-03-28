@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import ToggleSwitch from "../../ToggleSwitch";
 import Button from "../../Button";
 import Wrap from "../Wrap";
+
+import type { StepProps } from "../../MultiStepForm";
 
 import IconArcade from "../../../../public/images/icon-arcade.svg";
 import IconAdvanced from "../../../../public/images/icon-advanced.svg";
@@ -10,9 +12,9 @@ import IconPro from "../../../../public/images/icon-pro.svg";
 
 import styles from "../../../styles/components/steps/selectYourPlan.module.scss";
 
-interface SelectYourPlanProps {}
+const SelectYourPlan = ({ register, getValues }: Omit<StepProps, "errors">) => {
+  const [yearly, setYearly] = useState(getValues("yearly"));
 
-const SelectYourPlan = () => {
   return (
     <Wrap>
       <div id={styles.content}>
@@ -21,23 +23,45 @@ const SelectYourPlan = () => {
           <h2>You have the option of monthly or yearly billing.</h2>
         </div>
         <div className={styles.option}>
+          <input
+            type="radio"
+            value={1}
+            defaultChecked={getValues("plan") === "arcade"}
+            {...register("plan")}
+          />
           <img src={IconArcade} width={40} height={40} alt="icon-arcade" />
           <label>Arcade</label>
-          <p>$9/mo</p>
+          <p>${yearly ? "90/yr" : "9/mo"}</p>
         </div>
         <div className={styles.option}>
+          <input
+            type="radio"
+            value={2}
+            defaultChecked={getValues("plan") === "advanced"}
+            {...register("plan")}
+          />
           <img src={IconAdvanced} width={40} height={40} alt="icon-advanced" />
           <label>Advanced</label>
-          <p>$12/mo</p>
+          <p>${yearly ? "120/yr" : "12/mo"}</p>
         </div>
         <div className={styles.option}>
+          <input
+            type="radio"
+            value={3}
+            defaultChecked={getValues("plan") === "pro"}
+            {...register("plan")}
+          />
           <img src={IconPro} width={40} height={40} alt="icon-pro" />
           <label>Pro</label>
-          <p>$15/mo</p>
+          <p>${yearly ? "150/yr" : "15/mo"}</p>
         </div>
         <div id={styles.switch}>
           <label>Monthly</label>
-          <ToggleSwitch />
+          <ToggleSwitch
+            onClick={() => setYearly((item) => (item = !item))}
+            defaultChecked={getValues("yearly")}
+            {...register("yearly")}
+          />
           <label>Yearly</label>
         </div>
       </div>
@@ -49,5 +73,4 @@ const SelectYourPlan = () => {
   );
 };
 
-export type { SelectYourPlanProps };
 export default SelectYourPlan;
