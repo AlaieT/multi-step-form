@@ -11,11 +11,18 @@ import styles from "../../../styles/components/steps/yourInfo.module.scss";
 const YourInfo = ({
   title,
   subTitle,
+  trigger,
   register,
   getValues,
   errors,
   changeStep,
 }: YourInfoProps) => {
+  const handleNewStep = async () => {
+    const res = await trigger(["name", "email", "phone"]);
+
+    if (res) changeStep(1);
+  };
+
   return (
     <Wrap>
       <div id={styles.content}>
@@ -28,6 +35,7 @@ const YourInfo = ({
             {...register("name")}
             className={styles.field}
             label="Name"
+            type="text"
             error={errors.name?.message}
             placeholder="e.g. Stephen King"
             defaultValue={getValues("name")}
@@ -36,6 +44,7 @@ const YourInfo = ({
             {...register("email")}
             className={styles.field}
             label="Email Addres"
+            type="email"
             error={errors.email?.message}
             placeholder="e.g. stephenking@lorem.com"
             defaultValue={getValues("email")}
@@ -43,6 +52,7 @@ const YourInfo = ({
           <Input
             {...register("phone")}
             className={styles.field}
+            type="tel"
             label="Phone Number"
             error={errors.phone?.message}
             placeholder="e.q. +1 234 567 890"
@@ -51,7 +61,11 @@ const YourInfo = ({
         </div>
       </div>
       <div id={styles.controls}>
-        <Button id={styles.next_step} onClick={() => changeStep(1)}>
+        <Button
+          id={styles.next_step}
+          type="button"
+          onClick={() => handleNewStep()}
+        >
           Next Step
         </Button>
       </div>

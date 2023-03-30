@@ -17,6 +17,7 @@ const MultiStepForm = ({
     register,
     getValues,
     setValue,
+    trigger,
     formState: { errors, isValid, isSubmitted, isSubmitSuccessful },
     handleSubmit,
   } = useForm<MFS>({
@@ -85,6 +86,7 @@ const MultiStepForm = ({
         {step == 0 && !isSubmitted && !isSubmitSuccessful && (
           <Steps.YourInfo
             {...yourInfo}
+            trigger={trigger}
             register={register}
             getValues={getValues}
             errors={errors}

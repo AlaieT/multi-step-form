@@ -6,6 +6,7 @@ import type {
   UseFormRegister,
   UseFormGetValues,
   UseFormSetValue,
+  UseFormTrigger,
   FieldErrors,
 } from "react-hook-form";
 
@@ -41,6 +42,7 @@ interface StepProps {
 }
 
 export interface YourInfoProps extends StepProps {
+  trigger: UseFormTrigger<MFS>;
   register: UseFormRegister<MFS>;
   getValues: UseFormGetValues<MFS>;
   errors: FieldErrors<MFS>;

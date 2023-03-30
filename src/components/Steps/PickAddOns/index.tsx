@@ -46,10 +46,14 @@ const PickAddOns = ({
         })}
       </div>
       <div id={styles.controls}>
-        <Button id={styles.go_back} onClick={() => changeStep(1)}>
+        <Button id={styles.go_back} type="button" onClick={() => changeStep(1)}>
           Go Back
         </Button>
-        <Button id={styles.next_step} onClick={() => changeStep(3)}>
+        <Button
+          id={styles.next_step}
+          type="button"
+          onClick={() => changeStep(3)}
+        >
           Next Step
         </Button>
       </div>

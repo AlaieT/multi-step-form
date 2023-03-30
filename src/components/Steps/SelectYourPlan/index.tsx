@@ -51,14 +51,18 @@ const SelectYourPlan = ({
             onClick={() => setPlanMode((item) => (item = !item))}
             defaultChecked={getValues("planMode")}
           />
-          <label id={!planMode ? styles.selected : undefined}>Yearly</label>
+          <label id={planMode ? styles.selected : undefined}>Yearly</label>
         </div>
       </div>
       <div id={styles.controls}>
-        <Button id={styles.go_back} onClick={() => changeStep(0)}>
+        <Button id={styles.go_back} type="button" onClick={() => changeStep(0)}>
           Go Back
         </Button>
-        <Button id={styles.next_step} onClick={() => changeStep(2)}>
+        <Button
+          id={styles.next_step}
+          type="button"
+          onClick={() => changeStep(2)}
+        >
           Next Step
         </Button>
       </div>

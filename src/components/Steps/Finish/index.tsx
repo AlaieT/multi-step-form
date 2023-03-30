@@ -1,6 +1,6 @@
 import React from "react";
 
-import IconFinish from "../../../../public/images/icon-thank-you.svg";
+import IconFinish from "../../../images/icon-thank-you.svg";
 
 import styles from "../../../styles/components/steps/finish.module.scss";
 

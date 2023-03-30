@@ -67,7 +67,7 @@ const Summary = ({
         </div>
       </div>
       <div id={styles.controls}>
-        <Button id={styles.go_back} onClick={() => changeStep(2)}>
+        <Button id={styles.go_back} type="button" onClick={() => changeStep(2)}>
           Go Back
         </Button>
         <Button id={styles.next_step} type="submit" disabled={!isValid}>
