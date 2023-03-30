@@ -38,13 +38,14 @@ export type MFS = InferType<typeof multiStepFromSchema>;
 interface StepProps {
   title: string;
   subTitle: string;
-  changeStep: (step: number) => void;
 }
 
 export interface YourInfoProps extends StepProps {
   register: UseFormRegister<MFS>;
   getValues: UseFormGetValues<MFS>;
   errors: FieldErrors<MFS>;
+
+  changeStep: (step: number) => void;
 }
 
 export interface SelectYourPlanProps extends StepProps {
@@ -61,6 +62,8 @@ export interface SelectYourPlanProps extends StepProps {
 
   register: UseFormRegister<MFS>;
   getValues: UseFormGetValues<MFS>;
+
+  changeStep: (step: number) => void;
 }
 
 export interface PickAddOnsProps extends StepProps {
@@ -77,6 +80,8 @@ export interface PickAddOnsProps extends StepProps {
 
   register: UseFormRegister<MFS>;
   getValues: UseFormGetValues<MFS>;
+
+  changeStep: (step: number) => void;
 }
 
 export interface SummaryProps extends StepProps {
@@ -86,6 +91,8 @@ export interface SummaryProps extends StepProps {
   isValid: boolean;
   setValue: UseFormSetValue<MFS>;
   getValues: UseFormGetValues<MFS>;
+
+  changeStep: (step: number) => void;
 }
 
 /**

@@ -5,9 +5,9 @@ import MultiStepForm from "./components/MultiStepForm";
 
 import type { MultiStepFormProps } from "./types";
 
-import IconArcade from "../public/images/icon-arcade.svg";
-import IconAdvanced from "../public/images/icon-advanced.svg";
-import IconPro from "../public/images/icon-pro.svg";
+import IconArcade from "./images/icon-arcade.svg";
+import IconAdvanced from "./images/icon-advanced.svg";
+import IconPro from "./images/icon-pro.svg";
 
 import "./styles/global.scss";
 
