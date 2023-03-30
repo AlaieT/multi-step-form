@@ -1,11 +1,8 @@
 import React from "react";
 
-import styles from "../../styles/components/toggleSwitch.module.scss";
+import type { ToggleSwitchProps } from "../../types";
 
-type ToggleSwitchProps = Omit<
-  React.ComponentPropsWithoutRef<"input">,
-  "type" | "children"
->;
+import styles from "../../styles/components/toggleSwitch.module.scss";
 
 const ToggleSwitch = React.forwardRef<HTMLInputElement, ToggleSwitchProps>(
   ({ ...rest }, ref) => {
@@ -17,5 +14,6 @@ const ToggleSwitch = React.forwardRef<HTMLInputElement, ToggleSwitchProps>(
   }
 );
 
-export type { ToggleSwitchProps };
+ToggleSwitch.displayName = "ToggleSwitch";
+
 export default ToggleSwitch;

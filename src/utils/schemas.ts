@@ -1,6 +1,4 @@
-import { object, string, boolean } from "yup";
-
-import type { InferType } from "yup";
+import { object, string, boolean, number } from "yup";
 
 const multiStepFromSchema = object({
   name: string().required("Name is a required field!"),
@@ -8,14 +6,12 @@ const multiStepFromSchema = object({
     .required("Email is a required field!")
     .email("Must be a valid email!"),
   phone: string().required("Phone is a required field!"),
-  plan: string().oneOf(["arcade", "advanced", "pro"]).required(),
-  yearly: boolean(),
-  onlineSerivce: boolean(),
-  largeStorage: boolean(),
-  customizableProfile: boolean(),
+  plan: string().oneOf(["arcade", "advanced", "pro"]).defined(),
+  planMode: boolean().defined(),
+  onlineSerivce: boolean().defined(),
+  largeStorage: boolean().defined(),
+  customizableProfile: boolean().defined(),
+  totalPrice: number().defined(),
 });
 
-type MultiStepFromSchema = InferType<typeof multiStepFromSchema>;
-
-export type { MultiStepFromSchema };
 export { multiStepFromSchema };

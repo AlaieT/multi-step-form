@@ -2,13 +2,9 @@ import React from "react";
 
 import classNames from "../../utils/classNames";
 
-import styles from "../../styles/components/input.module.scss";
+import type { InputProps } from "../../types";
 
-interface InputProps
-  extends Omit<React.ComponentPropsWithoutRef<"input">, "children"> {
-  label?: string;
-  error?: string;
-}
+import styles from "../../styles/components/input.module.scss";
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, className, ...rest }, ref) => {
@@ -24,5 +20,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-export type { InputProps };
+Input.displayName = "Input";
+
 export default Input;

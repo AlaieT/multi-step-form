@@ -4,17 +4,24 @@ import Input from "../../Input";
 import Button from "../../Button";
 import Wrap from "../Wrap";
 
-import type { StepProps } from "../../MultiStepForm";
+import type { YourInfoProps } from "../../../types";
 
 import styles from "../../../styles/components/steps/yourInfo.module.scss";
 
-const YourInfo = ({ register, getValues, errors }: StepProps) => {
+const YourInfo = ({
+  title,
+  subTitle,
+  register,
+  getValues,
+  errors,
+  changeStep,
+}: YourInfoProps) => {
   return (
     <Wrap>
       <div id={styles.content}>
         <div id={styles.header}>
-          <h1>Personal info</h1>
-          <h2>Please provide your name, email address, and phone number.</h2>
+          <h1>{title}</h1>
+          <h2>{subTitle}</h2>
         </div>
         <div id={styles.fields}>
           <Input
@@ -44,7 +51,9 @@ const YourInfo = ({ register, getValues, errors }: StepProps) => {
         </div>
       </div>
       <div id={styles.controls}>
-        <Button id={styles.next_step}>Next Step</Button>
+        <Button id={styles.next_step} onClick={() => changeStep(1)}>
+          Next Step
+        </Button>
       </div>
     </Wrap>
   );

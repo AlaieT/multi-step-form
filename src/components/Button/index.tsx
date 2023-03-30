@@ -1,8 +1,8 @@
 import React from "react";
 
-import styles from "../../styles/components/button.module.scss";
+import type { ButtonProps } from "../../types";
 
-type ButtonProps = Omit<React.ComponentPropsWithoutRef<"button">, "className">;
+import styles from "../../styles/components/button.module.scss";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, ...rest }, ref) => {
@@ -14,5 +14,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-export type { ButtonProps };
+Button.displayName = "Button";
+
 export default Button;
