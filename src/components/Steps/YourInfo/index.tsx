@@ -25,28 +25,28 @@ const YourInfo = ({
         </div>
         <div id={styles.fields}>
           <Input
+            {...register("name")}
             className={styles.field}
             label="Name"
             error={errors.name?.message}
             placeholder="e.g. Stephen King"
             defaultValue={getValues("name")}
-            {...register("name")}
           />
           <Input
+            {...register("email")}
             className={styles.field}
             label="Email Addres"
             error={errors.email?.message}
             placeholder="e.g. stephenking@lorem.com"
             defaultValue={getValues("email")}
-            {...register("email")}
           />
           <Input
+            {...register("phone")}
             className={styles.field}
             label="Phone Number"
             error={errors.phone?.message}
             placeholder="e.q. +1 234 567 890"
             defaultValue={getValues("phone")}
-            {...register("phone")}
           />
         </div>
       </div>

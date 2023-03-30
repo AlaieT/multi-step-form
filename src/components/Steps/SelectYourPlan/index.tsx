@@ -31,10 +31,10 @@ const SelectYourPlan = ({
           return (
             <div key={key} className={styles.option}>
               <input
+                {...register("plan")}
                 type="radio"
                 value={key}
                 defaultChecked={getValues("plan") === key}
-                {...register("plan")}
               />
               <img src={image} width={40} height={40} alt={`icon-${key}`} />
               <label>{label}</label>
@@ -45,13 +45,13 @@ const SelectYourPlan = ({
           );
         })}
         <div id={styles.switch}>
-          <label>Monthly</label>
+          <label id={!planMode ? styles.selected : undefined}>Monthly</label>
           <ToggleSwitch
+            {...register("planMode")}
             onClick={() => setPlanMode((item) => (item = !item))}
             defaultChecked={getValues("planMode")}
-            {...register("planMode")}
           />
-          <label>Yearly</label>
+          <label id={!planMode ? styles.selected : undefined}>Yearly</label>
         </div>
       </div>
       <div id={styles.controls}>

@@ -85,7 +85,8 @@
         border-radius: 8px;
       }
 
-      &:hover, &:checked {
+      &:hover,
+      &:checked {
         &::before {
           border: 1px solid $plan-border-color;
 
@@ -110,6 +111,12 @@
 
     & label {
       margin: 0px 25px;
+
+      color: $secondary-text-color;
+
+      & #selected {
+        color: $primary-text-color;
+      }
     }
   }
 }

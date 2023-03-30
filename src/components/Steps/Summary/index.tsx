@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Button from "../../Button";
 import Wrap from "../Wrap";
@@ -24,9 +24,12 @@ const Summary = ({
     plans[planType].pricing[planMode] +
     Object.keys(addOns)
       .map((key) => (getValues(key) ? addOns[key].pricing[planMode] : 0))
-      .reduce((prev, curr) => prev + curr);
+      .reduce((prev, curr) => prev + curr, 0);
 
-  setValue("totalPrice", totalPrice, { shouldValidate: false });
+  useEffect(() => {
+    setValue("totalPrice", totalPrice, { shouldValidate: false });
+    return () => {};
+  }, []);
 
   return (
     <Wrap>

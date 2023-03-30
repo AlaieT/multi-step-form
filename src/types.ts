@@ -39,15 +39,15 @@ interface StepProps {
   title: string;
   subTitle: string;
   changeStep: (step: number) => void;
+}
 
+export interface YourInfoProps extends StepProps {
   register: UseFormRegister<MFS>;
   getValues: UseFormGetValues<MFS>;
   errors: FieldErrors<MFS>;
 }
 
-export type YourInfoProps = StepProps;
-
-export interface SelectYourPlanProps extends Omit<StepProps, "errors"> {
+export interface SelectYourPlanProps extends StepProps {
   plans: {
     [x in "arcade" | "advanced" | "pro"]: {
       label: string;
@@ -58,9 +58,12 @@ export interface SelectYourPlanProps extends Omit<StepProps, "errors"> {
       };
     };
   };
+
+  register: UseFormRegister<MFS>;
+  getValues: UseFormGetValues<MFS>;
 }
 
-export interface PickAddOnsProps extends Omit<StepProps, "errors"> {
+export interface PickAddOnsProps extends StepProps {
   addOns: {
     [x in "largeStorage" | "onlineSerivce" | "customizableProfile"]: {
       label: string;
@@ -71,14 +74,18 @@ export interface PickAddOnsProps extends Omit<StepProps, "errors"> {
       };
     };
   };
+
+  register: UseFormRegister<MFS>;
+  getValues: UseFormGetValues<MFS>;
 }
 
-export interface SummaryProps extends Omit<StepProps, "register" | "errors"> {
+export interface SummaryProps extends StepProps {
   plans: SelectYourPlanProps["plans"];
   addOns: PickAddOnsProps["addOns"];
 
   isValid: boolean;
   setValue: UseFormSetValue<MFS>;
+  getValues: UseFormGetValues<MFS>;
 }
 
 /**
@@ -87,18 +94,9 @@ export interface SummaryProps extends Omit<StepProps, "register" | "errors"> {
 
 export interface MultiStepFormProps {
   steps: {
-    yourInfo: Omit<
-      YourInfoProps,
-      "register" | "getValues" | "errors" | "changeStep"
-    >;
-    selectYoutPlan: Omit<
-      SelectYourPlanProps,
-      "register" | "getValues" | "changeStep"
-    >;
-    pickAddOns: Omit<PickAddOnsProps, "register" | "getValues" | "changeStep">;
-    summary: Omit<
-      SummaryProps,
-      "getValues" | "plans" | "addOns" | "changeStep" | "setValue" | "isValid"
-    >;
+    yourInfo: StepProps;
+    selectYoutPlan: Pick<SelectYourPlanProps, "plans" | "title" | "subTitle">;
+    pickAddOns: Pick<PickAddOnsProps, "addOns" | "title" | "subTitle">;
+    summary: StepProps;
   };
 }
