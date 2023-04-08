@@ -1,18 +1,16 @@
-@import "../../utils/variables.scss";
-@import "../../utils/mixins.scss";
+@import "../../utils/variables";
+@import "../../utils/mixins";
 
 #content {
   width: 100%;
 
   & #header {
     width: 100%;
-    margin: 0 0 32px 0;
-
+    margin: 0 0 32px;
     grid-area: A;
 
     & h1 {
-      margin: 0 0 8px 0;
-
+      margin: 0 0 8px;
       font-size: 32px;
       font-weight: 600;
     }
@@ -26,45 +24,33 @@
 
   & #info {
     padding: 22px 24px;
-
     background-color: $select-plan;
-
     border-radius: 8px;
-
     grid-area: B;
 
     & #plan {
-      padding: 0 0 22px 0;
-
+      padding: 0 0 22px;
       border-bottom: 1px solid $shadow-color;
-
       display: grid;
-
       grid-template-areas:
         "A C"
         "B C";
-
       justify-content: space-between;
       align-items: center;
 
-      & label {
-        margin: 0 0 8px 0;
-
+      & p:first-child {
+        margin: 0 0 8px;
         font-weight: 500;
         text-transform: capitalize;
-
         grid-area: A;
       }
 
       & #change_plan {
         cursor: pointer;
-
         width: max-content;
         height: max-content;
         padding: 0;
-
         background: none;
-
         color: $secondary-text-color;
         font-size: 14px;
         text-decoration: underline;
@@ -76,16 +62,14 @@
         grid-area: B;
       }
 
-      & p {
+      & p:last-child {
         font-weight: 600;
-
         grid-area: C;
       }
     }
 
     & .add_ons {
-      margin: 20px 0 20px 0;
-
+      margin: 20px 0;
       color: $secondary-text-color;
       font-size: 14px;
 
@@ -96,7 +80,7 @@
       }
 
       &:last-child {
-        margin: 20px 0 0 0;
+        margin: 20px 0 0;
       }
 
       @include flex("space-between&center");
@@ -105,7 +89,6 @@
 
   & #total {
     padding: 22px 24px;
-
     grid-area: C;
 
     @include flex("space-between&center");
@@ -132,15 +115,12 @@
     width: max-content;
     padding-left: 0;
     padding-right: 0;
-
     color: $secondary-text-color;
-
     background: transparent;
   }
 
   & #next_step {
     width: 124px;
-
     background-color: $select-input;
 
     &:disabled,
@@ -157,11 +137,9 @@
 @media screen and (max-width: 940px) {
   #content {
     width: 343px;
-    padding: 32px 24px 16px 24px;
-    margin: 0 0 160px 0;
-
+    padding: 32px 24px 16px;
+    margin: 0 0 160px;
     border-radius: 8px;
-
     background-color: white;
 
     & #header {
@@ -171,16 +149,12 @@
     }
 
     & #plan {
-      padding: 0 0 22px 0;
-
+      padding: 0 0 22px;
       border-bottom: 1px solid $shadow-color;
-
       display: grid;
-
       grid-template-areas:
         "A C"
         "B C";
-
       justify-content: space-between;
       align-items: center;
 
@@ -204,8 +178,7 @@
 
   #controls {
     height: 72px;
-    padding: 0 16px 0 16px;
-
+    padding: 0 16px;
     background-color: white;
   }
 }

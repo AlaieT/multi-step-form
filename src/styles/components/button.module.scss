@@ -1,17 +1,12 @@
-@import "../utils/variables.scss";
-@import "../utils/variables.scss";
+@import "../utils/variables";
 
 .button {
   cursor: pointer;
-
   padding: 12px 18px;
-
   color: $background-white;
   font-size: 14px;
   font-weight: 400;
-
   background: $primary-text-color;
-
   border: none;
   border-radius: 8px;
 

@@ -1,9 +1,9 @@
-@import "../utils/variables.scss";
-@import "../utils/mixins.scss";
+@import "../utils/variables";
+@import "../utils/mixins";
 
 .input {
   & .badges {
-    margin: 0 0 8px 0;
+    margin: 0 0 8px;
 
     @include flex("space-between&center");
 
@@ -16,12 +16,9 @@
     width: 100%;
     height: 46px;
     padding: 0 16px;
-
     color: $primary-text-color;
     font-weight: 600;
-
     border-radius: 8px;
-
     border: 1px solid $secondary-text-color;
 
     &.error {

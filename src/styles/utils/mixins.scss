@@ -1,27 +1,27 @@
 @mixin flex($param: null, $type: null) {
   display: flex;
 
-  @if ($param == "center&center") {
+  @if  $param == "center&center" {
     justify-content: center;
     align-items: center;
   }
 
-  @if ($param == "center&end") {
+  @if  $param == "center&end" {
     justify-content: center;
     align-items: flex-end;
   }
 
-  @if ($param == "end&center") {
+  @if  $param == "end&center" {
     justify-content: flex-end;
     align-items: center;
   }
 
-  @if ($param == "space-between&center") {
+  @if  $param == "space-between&center" {
     justify-content: space-between;
     align-items: center;
   }
 
-  @if ($type == "col") {
+  @if  $type == "col" {
     flex-direction: column;
   }
 }

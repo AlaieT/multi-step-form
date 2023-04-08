@@ -5,13 +5,11 @@ import type { ButtonProps } from "../../types";
 import styles from "../../styles/components/button.module.scss";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, ...rest }, ref) => {
-    return (
-      <button {...rest} ref={ref} className={styles.button}>
-        {children}
-      </button>
-    );
-  }
+  ({ children, type = "button", ...rest }, ref) => (
+    <button {...rest} type={type} ref={ref} className={styles.button}>
+      {children}
+    </button>
+  )
 );
 
 Button.displayName = "Button";

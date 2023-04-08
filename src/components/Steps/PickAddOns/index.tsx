@@ -13,7 +13,7 @@ const PickAddOns = ({
   addOns,
   register,
   getValues,
-  changeStep,
+  changeStep
 }: PickAddOnsProps) => {
   const planMode = getValues("planMode");
 
@@ -34,9 +34,9 @@ const PickAddOns = ({
                 defaultChecked={getValues(key)}
                 {...register(key)}
               />
-              <span></span>
+              <span />
               <div className={styles.title}>
-                <label>{label}</label>
+                <p>{label}</p>
                 <p>{discription}</p>
               </div>
               +$

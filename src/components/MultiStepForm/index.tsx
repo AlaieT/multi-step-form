@@ -10,7 +10,9 @@ import type { MultiStepFormProps, MFS } from "../../types";
 import styles from "../../styles/components/multiStepFrom.module.scss";
 
 const MultiStepForm = ({
-  steps: { yourInfo, pickAddOns, selectYoutPlan, summary },
+  steps: {
+    yourInfo, pickAddOns, selectYoutPlan, summary
+  }
 }: MultiStepFormProps) => {
   const [step, setStep] = useState<number>(0);
   const {
@@ -18,8 +20,10 @@ const MultiStepForm = ({
     getValues,
     setValue,
     trigger,
-    formState: { errors, isValid, isSubmitted, isSubmitSuccessful },
-    handleSubmit,
+    formState: {
+      errors, isValid, isSubmitted, isSubmitSuccessful
+    },
+    handleSubmit
   } = useForm<MFS>({
     defaultValues: {
       name: "",
@@ -30,15 +34,15 @@ const MultiStepForm = ({
       customizableProfile: false,
       onlineSerivce: false,
       largeStorage: false,
-      totalPrice: 0,
+      totalPrice: 0
     },
     resolver: yupResolver(multiStepFromSchema),
-    mode: "onChange",
+    mode: "onChange"
   });
 
-  const handleChangeStep = (step: number) => {
-    if (step >= 0 && step < 4 && !isSubmitted && !isSubmitSuccessful) {
-      setStep(step);
+  const handleChangeStep = (newStep: number) => {
+    if (newStep >= 0 && newStep < 4 && !isSubmitted && !isSubmitSuccessful) {
+      setStep(newStep);
     }
   };
 
@@ -47,32 +51,20 @@ const MultiStepForm = ({
       <div id={styles.steps}>
         <nav>
           <ul>
-            <li
-              id={step == 0 ? styles.active : undefined}
-              onClick={() => handleChangeStep(0)}
-            >
-              <label>STEP 1</label>
+            <li id={step === 0 ? styles.active : undefined}>
+              <p>STEP 1</p>
               <h3>YOUR INFO</h3>
             </li>
-            <li
-              id={step == 1 ? styles.active : undefined}
-              onClick={() => handleChangeStep(1)}
-            >
-              <label>STEP 2</label>
+            <li id={step === 1 ? styles.active : undefined}>
+              <p>STEP 2</p>
               <h3>SELECT PLAN</h3>
             </li>
-            <li
-              id={step == 2 ? styles.active : undefined}
-              onClick={() => handleChangeStep(2)}
-            >
-              <label>STEP 3</label>
+            <li id={step === 2 ? styles.active : undefined}>
+              <p>STEP 3</p>
               <h3>ADD-ONS</h3>
             </li>
-            <li
-              id={step == 3 ? styles.active : undefined}
-              onClick={() => handleChangeStep(3)}
-            >
-              <label>STEP 4</label>
+            <li id={step === 3 ? styles.active : undefined}>
+              <p>STEP 4</p>
               <h3>SUMMARY</h3>
             </li>
           </ul>
@@ -83,9 +75,10 @@ const MultiStepForm = ({
           console.log(data);
         })}
       >
-        {step == 0 && !isSubmitted && !isSubmitSuccessful && (
+        {step === 0 && !isSubmitted && !isSubmitSuccessful && (
           <Steps.YourInfo
-            {...yourInfo}
+            subTitle={yourInfo.subTitle}
+            title={yourInfo.title}
             trigger={trigger}
             register={register}
             getValues={getValues}
@@ -93,25 +86,30 @@ const MultiStepForm = ({
             changeStep={handleChangeStep}
           />
         )}
-        {step == 1 && !isSubmitted && !isSubmitSuccessful && (
+        {step === 1 && !isSubmitted && !isSubmitSuccessful && (
           <Steps.SelectYourPlan
-            {...selectYoutPlan}
+            plans={selectYoutPlan.plans}
+            subTitle={selectYoutPlan.subTitle}
+            title={selectYoutPlan.title}
             register={register}
             getValues={getValues}
             changeStep={handleChangeStep}
           />
         )}
-        {step == 2 && !isSubmitted && !isSubmitSuccessful && (
+        {step === 2 && !isSubmitted && !isSubmitSuccessful && (
           <Steps.PickAddOns
-            {...pickAddOns}
+            addOns={pickAddOns.addOns}
+            subTitle={pickAddOns.subTitle}
+            title={pickAddOns.title}
             register={register}
             getValues={getValues}
             changeStep={handleChangeStep}
           />
         )}
-        {step == 3 && !isSubmitted && !isSubmitSuccessful && (
+        {step === 3 && !isSubmitted && !isSubmitSuccessful && (
           <Steps.Summary
-            {...summary}
+            subTitle={summary.subTitle}
+            title={summary.title}
             plans={selectYoutPlan.plans}
             addOns={pickAddOns.addOns}
             isValid={isValid}

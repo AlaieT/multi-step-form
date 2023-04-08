@@ -4,4 +4,6 @@ import PickAddOns from "./PickAddOns";
 import Summary from "./Summary";
 import Finish from "./Finish";
 
-export default { YourInfo, SelectYourPlan, PickAddOns, Summary, Finish };
+export default {
+  YourInfo, SelectYourPlan, PickAddOns, Summary, Finish
+};

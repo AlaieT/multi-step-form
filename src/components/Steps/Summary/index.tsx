@@ -15,21 +15,20 @@ const Summary = ({
   isValid,
   setValue,
   getValues,
-  changeStep,
+  changeStep
 }: SummaryProps) => {
   const planType = getValues("plan");
   const planMode = getValues("planMode") ? "yearly" : "monthly";
   const planPostfix = planMode === "yearly" ? "yr" : "mo";
-  const totalPrice =
-    plans[planType].pricing[planMode] +
-    Object.keys(addOns)
+  const totalPrice = plans[planType].pricing[planMode]
+    + Object.keys(addOns)
       .map((key) => (getValues(key) ? addOns[key].pricing[planMode] : 0))
       .reduce((prev, curr) => prev + curr, 0);
 
   useEffect(() => {
     setValue("totalPrice", totalPrice, { shouldValidate: false });
-    return () => {};
-  }, []);
+    return () => undefined;
+  }, [setValue, totalPrice]);
 
   return (
     <Wrap>
@@ -40,29 +39,40 @@ const Summary = ({
         </div>
         <div id={styles.info}>
           <div id={styles.plan}>
-            <label>
-              {planType} ({planMode})
-            </label>
+            <p>
+              {planType}
+              {" "}
+              (
+              {planMode}
+              )
+            </p>
             <Button id={styles.change_plan} onClick={() => changeStep(1)}>
               Change
             </Button>
-            <p>${`${plans[planType].pricing[planMode]}/${planPostfix}`}</p>
+            <p>
+              $
+              {`${plans[planType].pricing[planMode]}/${planPostfix}`}
+            </p>
           </div>
-          {Object.keys(addOns).map((key) =>
-            getValues(key) ? (
-              <div key={"summary_" + key} className={styles.add_ons}>
-                <span>{addOns[key].label}</span>
-                <span>
-                  + ${addOns[key].pricing[planMode]}/{planPostfix}
-                </span>
-              </div>
-            ) : null
-          )}
+          {Object.keys(addOns).map((key) => (getValues(key) ? (
+            <div key={`summary_${key}`} className={styles.add_ons}>
+              <span>{addOns[key].label}</span>
+              <span>
+                + $
+                {addOns[key].pricing[planMode]}
+                /
+                {planPostfix}
+              </span>
+            </div>
+          ) : null))}
         </div>
         <div id={styles.total}>
           <span>Total (per year)</span>
           <span>
-            ${totalPrice}/{planPostfix}
+            $
+            {totalPrice}
+            /
+            {planPostfix}
           </span>
         </div>
       </div>

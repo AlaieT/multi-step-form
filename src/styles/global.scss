@@ -1,6 +1,6 @@
-@import "./utils/variables.scss";
-@import "./utils/fonts.scss";
-@import "./utils/mixins.scss";
+@import "./utils/variables";
+@import "./utils/fonts";
+@import "./utils/mixins";
 
 * {
   box-sizing: border-box;
@@ -10,7 +10,7 @@
 }
 
 html {
-  font-family: "Ubuntu";
+  font-family: Ubuntu, sans-serif;
   color: $primary-text-color;
   font-size: 16px;
   font-weight: 400;

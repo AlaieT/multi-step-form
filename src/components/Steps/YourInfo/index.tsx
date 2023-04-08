@@ -15,7 +15,7 @@ const YourInfo = ({
   register,
   getValues,
   errors,
-  changeStep,
+  changeStep
 }: YourInfoProps) => {
   const handleNewStep = async () => {
     const res = await trigger(["name", "email", "phone"]);

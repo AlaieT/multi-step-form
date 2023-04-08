@@ -1,26 +1,22 @@
-@import "../../utils/variables.scss";
-@import "../../utils/mixins.scss";
+@import "../../utils/variables";
+@import "../../utils/mixins";
 
 #content {
   width: 100%;
-
   display: grid;
   grid-template-areas:
     "A A A"
     "B C D"
     "E E E";
-
   justify-content: space-between;
 
   & #header {
     width: 100%;
-    margin: 0 0 32px 0;
-
+    margin: 0 0 32px;
     grid-area: A;
 
     & h1 {
-      margin: 0 0 8px 0;
-
+      margin: 0 0 8px;
       font-size: 32px;
       font-weight: 600;
     }
@@ -35,53 +31,47 @@
   & .option {
     position: relative;
     z-index: 1;
-
     width: 138px;
-    height: 160px;
-    padding: 18px 0px 14px 14px;
+    min-height: 160px;
+    padding: 20px 0 20px 14px;
 
-    & img {
-      margin: 0 0 40px 0;
+    & svg {
+      margin: 0 0 40px;
     }
 
     & label {
-      margin: 0 0 4px 0;
-
+      margin: 0 0 5px;
       font-weight: 500;
       text-transform: capitalize;
-
       display: block;
     }
 
     & p {
       color: $secondary-text-color;
+      font-size: 14px;
+
+      &:last-child {
+        margin: 5px 0 0;
+        color: $primary-text-color;
+        font-size: 12px;
+      }
     }
 
     & input {
       cursor: pointer;
-
       appearance: none;
-
       position: absolute;
       top: 0;
       left: 0;
-
       width: 100%;
       height: 100%;
 
       &::before {
         content: "";
-
         position: absolute;
-
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        inset: 0;
         z-index: -1;
-
         border: 1px solid $secondary-text-color;
-
         border-radius: 8px;
       }
 
@@ -89,7 +79,6 @@
       &:checked {
         &::before {
           border: 1px solid $plan-border-color;
-
           background-color: $select-plan;
         }
       }
@@ -99,19 +88,15 @@
   & #switch {
     width: 100%;
     height: 50px;
-    margin: 32px 0 0 0;
-
+    margin: 32px 0 0;
     grid-area: E;
-
     background-color: $select-plan;
-
     border-radius: 8px;
 
     @include flex("center&center");
 
     & label {
-      margin: 0px 25px;
-
+      margin: 0 25px;
       color: $secondary-text-color;
 
       &#selected {
@@ -130,9 +115,7 @@
     width: max-content;
     padding-left: 0;
     padding-right: 0;
-
     color: $secondary-text-color;
-
     background: transparent;
   }
 
@@ -144,11 +127,9 @@
 @media screen and (max-width: 940px) {
   #content {
     width: 343px;
-    padding: 32px 24px 16px 24px;
-    margin: 0 0 24px 0;
-
+    padding: 32px 24px 16px;
+    margin: 0 0 24px;
     border-radius: 8px;
-
     background-color: white;
 
     @include flex("center&center", "col");
@@ -161,24 +142,22 @@
 
     & .option {
       width: 100%;
-      height: 76px;
-      margin: 0 0 12px 0;
-
+      min-height: 76px;
+      margin: 0 0 12px;
       border-radius: 6px;
-
       display: grid;
       grid-template-areas:
         "A B"
-        "A C";
-
+        "A C"
+        "A D";
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
 
       &:nth-child(4) {
         margin: 0;
       }
 
-      & img {
+      & svg {
         margin: 0 12px 0 0;
         grid-area: A;
       }
@@ -189,22 +168,23 @@
 
       & p {
         grid-area: C;
+
+        &:last-child {
+          grid-area: D;
+        }
       }
     }
 
     & #switch {
-      margin: 24px 0 0 0;
-
+      margin: 24px 0 0;
       border-radius: 6px;
-
       font-size: 14px;
     }
   }
 
   #controls {
     height: 72px;
-    padding: 0 16px 0 16px;
-
+    padding: 0 16px;
     background-color: white;
   }
 }

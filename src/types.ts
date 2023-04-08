@@ -7,7 +7,7 @@ import type {
   UseFormGetValues,
   UseFormSetValue,
   UseFormTrigger,
-  FieldErrors,
+  FieldErrors
 } from "react-hook-form";
 
 /**
@@ -54,7 +54,6 @@ export interface SelectYourPlanProps extends StepProps {
   plans: {
     [x in "arcade" | "advanced" | "pro"]: {
       label: string;
-      image: string;
       pricing: {
         monthly: number;
         yearly: number;
