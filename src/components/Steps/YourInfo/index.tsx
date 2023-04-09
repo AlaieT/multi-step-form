@@ -32,6 +32,7 @@ const YourInfo = ({
           <Input
             {...register("name")}
             className={styles.field}
+            id="name"
             label="Name"
             type="text"
             error={errors.name?.message}
@@ -41,6 +42,7 @@ const YourInfo = ({
           <Input
             {...register("email")}
             className={styles.field}
+            id="email"
             label="Email Addres"
             type="email"
             error={errors.email?.message}
@@ -50,6 +52,7 @@ const YourInfo = ({
           <Input
             {...register("phone")}
             className={styles.field}
+            id="phone-number"
             type="tel"
             label="Phone Number"
             error={errors.phone?.message}

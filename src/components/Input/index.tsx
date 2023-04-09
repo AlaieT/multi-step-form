@@ -8,14 +8,14 @@ import styles from "../../styles/components/input.module.scss";
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({
-    label, error, className, ...rest
+    label, error, className, id, ...rest
   }, ref) => (
     <div className={classNames(styles.input, className)}>
       <div className={styles.badges}>
-        <label>{label}</label>
-        {error && <label>{error}</label>}
+        <label htmlFor={id}>{label}</label>
+        {error && <label htmlFor={id}>{error}</label>}
       </div>
-      <input {...rest} ref={ref} className={error && styles.error} />
+      <input {...rest} id={id} ref={ref} className={error && styles.error} />
     </div>
   )
 );

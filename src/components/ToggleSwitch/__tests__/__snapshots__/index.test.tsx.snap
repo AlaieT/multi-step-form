@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleSwitch testing Snapshot testing 1`] = `
+<DocumentFragment>
+  <div
+    class="switch"
+  >
+    <input
+      type="checkbox"
+    />
+  </div>
+</DocumentFragment>
+`;
