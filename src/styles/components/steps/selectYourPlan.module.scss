@@ -46,15 +46,16 @@
       display: block;
     }
 
-    & p {
+    & p:last-child {
+      margin: 5px 0 0;
+      color: $primary-text-color;
+      font-size: 12px;
+    }
+
+    & p:nth-child(4) {
+      margin: 0;
       color: $secondary-text-color;
       font-size: 14px;
-
-      &:last-child {
-        margin: 5px 0 0;
-        color: $primary-text-color;
-        font-size: 12px;
-      }
     }
 
     & input {
@@ -166,12 +167,12 @@
         grid-area: B;
       }
 
-      & p {
+      & p:nth-child(4) {
         grid-area: C;
+      }
 
-        &:last-child {
+      & p:last-child {
           grid-area: D;
-        }
       }
     }
 

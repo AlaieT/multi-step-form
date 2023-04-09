@@ -26,10 +26,11 @@
   #step {
     width: 343px;
     padding: 80px 20px;
+    margin: 0 auto;
     background-color: $background-white;
     border-radius: 8px;
 
-    & img{
+    & svg{
       width: 58px;
       height: 58px;
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import ToggleSwitch from "../../ToggleSwitch";
 import Button from "../../Button";
@@ -11,23 +11,23 @@ import { ReactComponent as IconAdvacned } from "../../../assets/images/icon-adva
 import { ReactComponent as IconPro } from "../../../assets/images/icon-pro.svg";
 
 import styles from "../../../styles/components/steps/selectYourPlan.module.scss";
+import { FormContext } from "../../../utils/context";
 
 const SelectYourPlan = ({
-  title,
-  subTitle,
   plans: { arcade, advanced, pro },
   register,
   getValues,
   changeStep
 }: SelectYourPlanProps) => {
+  const { form, setForm } = useContext(FormContext);
   const [planMode, setPlanMode] = useState(getValues("planMode"));
 
   return (
     <Wrap>
       <div id={styles.content}>
         <div id={styles.header}>
-          <h1>{title}</h1>
-          <h2>{subTitle}</h2>
+          <h1>Select your plan</h1>
+          <h2>You have the option of monthly or yearly billing.</h2>
         </div>
         <div className={styles.option}>
           <input
@@ -39,12 +39,7 @@ const SelectYourPlan = ({
           />
           <IconArcade width={40} height={40} />
           <label htmlFor="arcade">Arcade</label>
-          <p>
-            $
-            {planMode
-              ? `${arcade.pricing.yearly}/yr`
-              : `${arcade.pricing.monthly}/mo`}
-          </p>
+          <p>{`$${arcade[form.planMode]}/${form.priceMode}`}</p>
           {planMode && <p>2 months free</p>}
         </div>
         <div className={styles.option}>
@@ -57,12 +52,7 @@ const SelectYourPlan = ({
           />
           <IconAdvacned width={40} height={40} />
           <label htmlFor="advanced">Advanced</label>
-          <p>
-            $
-            {planMode
-              ? `${advanced.pricing.yearly}/yr`
-              : `${advanced.pricing.monthly}/mo`}
-          </p>
+          <p>{`$${advanced[form.planMode]}/${form.priceMode}`}</p>
           {planMode && <p>2 months free</p>}
         </div>
         <div className={styles.option}>
@@ -75,12 +65,7 @@ const SelectYourPlan = ({
           />
           <IconPro width={40} height={40} />
           <label htmlFor="pro">Pro</label>
-          <p>
-            $
-            {planMode
-              ? `${pro.pricing.yearly}/yr`
-              : `${pro.pricing.monthly}/mo`}
-          </p>
+          <p>{`$${pro[form.planMode]}/${form.priceMode}`}</p>
           {planMode && <p>2 months free</p>}
         </div>
         <div id={styles.switch}>
@@ -90,7 +75,13 @@ const SelectYourPlan = ({
           <ToggleSwitch
             {...register("planMode")}
             id="switch"
-            onClick={() => setPlanMode((item) => !item)}
+            onClick={() => {
+              setPlanMode((item) => !item);
+              setForm({
+                planMode: planMode ? "monthly" : "yearly",
+                priceMode: planMode ? "mo" : "yr"
+              });
+            }}
             defaultChecked={getValues("planMode")}
           />
           <label id={planMode ? styles.selected : undefined} htmlFor="switch">

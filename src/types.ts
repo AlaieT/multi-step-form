@@ -36,12 +36,7 @@ export interface InputProps
 
 export type MFS = InferType<typeof multiStepFromSchema>;
 
-interface StepProps {
-  title: string;
-  subTitle: string;
-}
-
-export interface YourInfoProps extends StepProps {
+export interface YourInfoProps {
   trigger: UseFormTrigger<MFS>;
   register: UseFormRegister<MFS>;
   getValues: UseFormGetValues<MFS>;
@@ -50,14 +45,11 @@ export interface YourInfoProps extends StepProps {
   changeStep: (step: number) => void;
 }
 
-export interface SelectYourPlanProps extends StepProps {
+export interface SelectYourPlanProps {
   plans: {
     [x in "arcade" | "advanced" | "pro"]: {
-      label: string;
-      pricing: {
-        monthly: number;
-        yearly: number;
-      };
+      monthly: number;
+      yearly: number;
     };
   };
 
@@ -67,15 +59,11 @@ export interface SelectYourPlanProps extends StepProps {
   changeStep: (step: number) => void;
 }
 
-export interface PickAddOnsProps extends StepProps {
+export interface PickAddOnsProps {
   addOns: {
     [x in "largeStorage" | "onlineSerivce" | "customizableProfile"]: {
-      label: string;
-      discription: string;
-      pricing: {
-        monthly: number;
-        yearly: number;
-      };
+      monthly: number;
+      yearly: number;
     };
   };
 
@@ -85,7 +73,7 @@ export interface PickAddOnsProps extends StepProps {
   changeStep: (step: number) => void;
 }
 
-export interface SummaryProps extends StepProps {
+export interface SummaryProps {
   plans: SelectYourPlanProps["plans"];
   addOns: PickAddOnsProps["addOns"];
 
@@ -102,9 +90,16 @@ export interface SummaryProps extends StepProps {
 
 export interface MultiStepFormProps {
   steps: {
-    yourInfo: StepProps;
-    selectYoutPlan: Pick<SelectYourPlanProps, "plans" | "title" | "subTitle">;
-    pickAddOns: Pick<PickAddOnsProps, "addOns" | "title" | "subTitle">;
-    summary: StepProps;
+    selectYoutPlan: Pick<SelectYourPlanProps, "plans">;
+    pickAddOns: Pick<PickAddOnsProps, "addOns">;
   };
+}
+
+/**
+ * Context
+ */
+
+export interface FormContextType {
+  form: { planMode: "yearly" | "monthly"; priceMode: "yr" | "mo" };
+  setForm: React.Dispatch<FormContextType["form"]>;
 }

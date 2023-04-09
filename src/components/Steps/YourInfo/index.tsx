@@ -9,8 +9,6 @@ import type { YourInfoProps } from "../../../types";
 import styles from "../../../styles/components/steps/yourInfo.module.scss";
 
 const YourInfo = ({
-  title,
-  subTitle,
   trigger,
   register,
   getValues,
@@ -27,8 +25,8 @@ const YourInfo = ({
     <Wrap>
       <div id={styles.content}>
         <div id={styles.header}>
-          <h1>{title}</h1>
-          <h2>{subTitle}</h2>
+          <h1>Personal info</h1>
+          <h2>Please provide your name, email address, and phone number.</h2>
         </div>
         <div id={styles.fields}>
           <Input

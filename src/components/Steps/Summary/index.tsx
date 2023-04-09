@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 
 import Button from "../../Button";
 import Wrap from "../Wrap";
@@ -6,10 +6,9 @@ import Wrap from "../Wrap";
 import type { SummaryProps } from "../../../types";
 
 import styles from "../../../styles/components/steps/summary.module.scss";
+import { FormContext } from "../../../utils/context";
 
 const Summary = ({
-  title,
-  subTitle,
   plans,
   addOns,
   isValid,
@@ -17,12 +16,12 @@ const Summary = ({
   getValues,
   changeStep
 }: SummaryProps) => {
+  const { form } = useContext(FormContext);
   const planType = getValues("plan");
-  const planMode = getValues("planMode") ? "yearly" : "monthly";
-  const planPostfix = planMode === "yearly" ? "yr" : "mo";
-  const totalPrice = plans[planType].pricing[planMode]
+
+  const totalPrice = plans[planType][form.planMode]
     + Object.keys(addOns)
-      .map((key) => (getValues(key) ? addOns[key].pricing[planMode] : 0))
+      .map((key) => (getValues(key) ? addOns[key][form.planMode] : 0))
       .reduce((prev, curr) => prev + curr, 0);
 
   useEffect(() => {
@@ -34,46 +33,49 @@ const Summary = ({
     <Wrap>
       <div id={styles.content}>
         <div id={styles.header}>
-          <h1>{title}</h1>
-          <h2>{subTitle}</h2>
+          <h1>Finishing up</h1>
+          <h2>Double-check everything looks OK before confirming.</h2>
         </div>
         <div id={styles.info}>
           <div id={styles.plan}>
             <p>
               {planType}
               {" "}
-              (
-              {planMode}
-              )
+              {form.planMode}
             </p>
             <Button id={styles.change_plan} onClick={() => changeStep(1)}>
               Change
             </Button>
-            <p>
-              $
-              {`${plans[planType].pricing[planMode]}/${planPostfix}`}
-            </p>
+            <p>{`$${plans[planType][form.planMode]}/${form.priceMode}`}</p>
           </div>
-          {Object.keys(addOns).map((key) => (getValues(key) ? (
-            <div key={`summary_${key}`} className={styles.add_ons}>
-              <span>{addOns[key].label}</span>
+          {getValues("onlineSerivce") && (
+            <div className={styles.add_ons}>
+              <span>Online Service</span>
               <span>
-                + $
-                {addOns[key].pricing[planMode]}
-                /
-                {planPostfix}
+                {`+ ${addOns.onlineSerivce[form.planMode]}/${form.priceMode}`}
               </span>
             </div>
-          ) : null))}
+          )}
+          {getValues("largeStorage") && (
+            <div className={styles.add_ons}>
+              <span>Large Storage</span>
+              <span>
+                {`+ ${addOns.largeStorage[form.planMode]}/${form.priceMode}`}
+              </span>
+            </div>
+          )}
+          {getValues("customizableProfile") && (
+            <div className={styles.add_ons}>
+              <span>Customizable Profile</span>
+              <span>
+                {`+ ${addOns.customizableProfile[form.planMode]}/${form.priceMode}`}
+              </span>
+            </div>
+          )}
         </div>
         <div id={styles.total}>
           <span>Total (per year)</span>
-          <span>
-            $
-            {totalPrice}
-            /
-            {planPostfix}
-          </span>
+          <span>{`$${totalPrice}/${form.priceMode}`}</span>
         </div>
       </div>
       <div id={styles.controls}>
