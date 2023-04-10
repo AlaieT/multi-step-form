@@ -1,5 +1,7 @@
 import React from "react";
-import { render, cleanup } from "@testing-library/react";
+import {
+  render, screen, fireEvent, cleanup
+} from "@testing-library/react";
 
 import ToggleSwitch from "..";
 
@@ -10,5 +12,13 @@ describe("ToggleSwitch testing", () => {
     const { asFragment } = render(<ToggleSwitch />);
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("Checkbox input testing", () => {
+    render(<ToggleSwitch />);
+    fireEvent.click(screen.getByRole("checkbox"));
+    expect(
+      (screen.getByRole("checkbox") as HTMLInputElement)
+    ).toBeChecked();
   });
 });

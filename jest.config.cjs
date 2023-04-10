@@ -3,6 +3,7 @@ module.exports = {
   testEnvironment: "jsdom",
   collectCoverage: true,
   rootDir: "./src",
+  setupFiles: ["<rootDir>/__setup__/reactFormHook.ts"],
   coverageProvider: "v8",
   collectCoverageFrom: [
     "**/*.{ts,tsx}",

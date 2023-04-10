@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input testing Snapshot tesing 1`] = `[Function]`;
+exports[`Input testing Snapshot tesing 1`] = `
+<DocumentFragment>
+  <div
+    class="input"
+  >
+    <div
+      class="badges"
+    >
+      <label
+        for="name"
+      >
+        Name
+      </label>
+      <label
+        for="name"
+      >
+        Name is required!
+      </label>
+    </div>
+    <input
+      class="error"
+      id="name"
+    />
+  </div>
+</DocumentFragment>
+`;

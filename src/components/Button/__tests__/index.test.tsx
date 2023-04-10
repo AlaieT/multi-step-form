@@ -1,5 +1,7 @@
 import React from "react";
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import {
+  render, screen, fireEvent, cleanup
+} from "@testing-library/react";
 
 import Button from "..";
 
@@ -25,7 +27,7 @@ describe("Button testing", () => {
   });
 
   it("Button type submit", () => {
-    const mockFun = jest.fn(e => e.preventDefault());
+    const mockFun = jest.fn((e) => e.preventDefault());
 
     render(
       <form onSubmit={mockFun}>
