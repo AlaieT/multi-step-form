@@ -14,7 +14,7 @@ describe("Button testing", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("Button type button", () => {
+  it("Button should work correctly with 'button' type", () => {
     const mockFun = jest.fn();
 
     render(
@@ -26,7 +26,7 @@ describe("Button testing", () => {
     expect(mockFun).toBeCalled();
   });
 
-  it("Button type submit", () => {
+  it("Button should work correctly with 'submit' type", () => {
     const mockFun = jest.fn((e) => e.preventDefault());
 
     render(

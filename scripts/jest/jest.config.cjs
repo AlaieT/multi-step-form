@@ -1,9 +1,12 @@
 /** @type {import('jest').Config} */
 module.exports = {
   testEnvironment: "jsdom",
+  clearMocks: true,
+  resetMocks: true,
+  restoreMocks: true,
   collectCoverage: true,
-  rootDir: "./src",
-  setupFiles: ["<rootDir>/__setup__/reactFormHook.ts"],
+  rootDir: "../../",
+  setupFilesAfterEnv: ["<rootDir>/scripts/jest/jest-setup.ts"],
   coverageProvider: "v8",
   collectCoverageFrom: [
     "**/*.{ts,tsx}",
@@ -15,9 +18,9 @@ module.exports = {
   moduleNameMapper: {
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
 
-    "\\.svg$": "<rootDir>/__mocks__/svg.ts",
+    "\\.svg$": "<rootDir>/src/__mocks__/svg.ts",
 
-    "^@/components/(.*)$": "<rootDir>/components/$1"
+    "^@/components/(.*)$": "<rootDir>/src/components/$1"
   },
   transform: {
     "^.+\\.(t|j)sx?$": "@swc/jest"
@@ -26,9 +29,10 @@ module.exports = {
   transformIgnorePatterns: ["/node_modules/"],
 
   modulePathIgnorePatterns: [
-    "<rootDir>/utils/*",
-    "<rootDir>/app.ts",
-    "<rootDir>/main.ts",
-    "<rootDir>/types.ts"
+    "<rootDir>/src/utils/*",
+    "<rootDir>/src/app.ts",
+    "<rootDir>/src/main.ts",
+    "<rootDir>/src/types.ts",
+    "<rootDir>/scripts/vite/vite.config.ts"
   ]
 };

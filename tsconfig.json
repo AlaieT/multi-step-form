@@ -16,11 +16,10 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "scripts/jest/jest-setup.ts"],
   "exclude": [
-    "**/__tests__/**/*.[jt]s?(x)",
-    "./src/__mocks__/*",
-    "./src/__setup__/*"
+    "src/**/__tests__",
+    "src/__mocks__/"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

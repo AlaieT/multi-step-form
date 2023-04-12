@@ -1,5 +1,5 @@
-node_modules
-dist
-coverage
-**/__mocks__/**
-**/__setup__/**
+/node_modules
+/dist
+/coverage
+/src/**/*.test.ts
+/src/**/*.test.tsx
