@@ -29,8 +29,7 @@ body {
 }
 
 @media screen and (max-width: 940px) {
-  div[id="root"]{
-    height: max-content;
-    min-height: max-content;
+  div[id="root"] {
+    @include flex("space-between&center", "col");
   }
 }

@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 940px) {
   #step {
-    width: 375px;
-    padding: 0;
+    min-width: 375px;
+    padding: 0 16px;
   }
 }

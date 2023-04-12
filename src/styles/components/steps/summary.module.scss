@@ -136,7 +136,7 @@
 
 @media screen and (max-width: 940px) {
   #content {
-    width: 343px;
+    min-width: 343px;
     padding: 32px 24px 16px;
     margin: 0 0 160px;
     border-radius: 8px;
