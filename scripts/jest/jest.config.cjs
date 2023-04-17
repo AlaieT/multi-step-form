@@ -7,32 +7,29 @@ module.exports = {
   collectCoverage: true,
   rootDir: "../../",
   setupFilesAfterEnv: ["<rootDir>/scripts/jest/jest-setup.ts"],
-  coverageProvider: "v8",
-  collectCoverageFrom: [
-    "**/*.{ts,tsx}",
-    "!**/*.d.ts",
-    "!**/node_modules/**",
-    "!<rootDir>/*.config.js",
-    "!<rootDir>/coverage/**"
-  ],
+  testMatch: ["<rootDir>/src/__tests__/**/*.(spec|test).ts?(x)"],
   moduleNameMapper: {
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
 
-    "\\.svg$": "<rootDir>/src/__mocks__/svg.ts",
-
-    "^@/components/(.*)$": "<rootDir>/src/components/$1"
+    "\\.svg$": "<rootDir>/src/__mocks__/svg.ts"
   },
   transform: {
     "^.+\\.(t|j)sx?$": "@swc/jest"
   },
-  testPathIgnorePatterns: ["/node_modules/"],
-  transformIgnorePatterns: ["/node_modules/"],
-
+  testPathIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+  transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
   modulePathIgnorePatterns: [
     "<rootDir>/src/utils/*",
     "<rootDir>/src/app.ts",
     "<rootDir>/src/main.ts",
     "<rootDir>/src/types.ts",
     "<rootDir>/scripts/vite/vite.config.ts"
+  ],
+  collectCoverageFrom: [
+    "**/*.{ts,tsx}",
+    "!**/*.d.ts",
+    "!**/node_modules/**",
+    "!<rootDir>/*.config.js",
+    "!<rootDir>/coverage/**"
   ]
 };

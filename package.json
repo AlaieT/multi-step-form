@@ -7,6 +7,7 @@
     "dev": "vite --config ./scripts/vite/vite.config.ts",
     "build": "tsc && vite build --config ./scripts/vite/vite.config.ts",
     "preview": "vite preview --config ./scripts/vite/vite.config.ts",
+    "type":"tsc --noEmit",
     "style": "stylelint **/*.scss",
     "lint": "eslint ./src",
     "test": "jest --config ./scripts/jest/jest.config.cjs"

@@ -61,7 +61,7 @@ export interface SelectYourPlanProps {
 
 export interface PickAddOnsProps {
   addOns: {
-    [x in "largeStorage" | "onlineSerivce" | "customizableProfile"]: {
+    [x in "largeStorage" | "onlineService" | "customizableProfile"]: {
       monthly: number;
       yearly: number;
     };
@@ -85,12 +85,12 @@ export interface SummaryProps {
 }
 
 /**
- * Top-level compoents
+ * Top-level components
  */
 
 export interface MultiStepFormProps {
   steps: {
-    selectYoutPlan: Pick<SelectYourPlanProps, "plans">;
+    selectYourPlan: Pick<SelectYourPlanProps, "plans">;
     pickAddOns: Pick<PickAddOnsProps, "addOns">;
   };
 }

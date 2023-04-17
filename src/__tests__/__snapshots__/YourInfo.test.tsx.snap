@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YourInfo correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="step"
+  >
+    <div
+      id="content"
+    >
+      <div
+        id="header"
+      >
+        <h1>
+          Personal info
+        </h1>
+        <h2>
+          Please provide your name, email address, and phone number.
+        </h2>
+      </div>
+      <div
+        id="fields"
+      >
+        <div
+          class="input field"
+        >
+          <div
+            class="badges"
+          >
+            <label
+              for="name"
+            >
+              Name
+            </label>
+          </div>
+          <input
+            id="name"
+            name="name"
+            placeholder="e.g. Stephen King"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="input field"
+        >
+          <div
+            class="badges"
+          >
+            <label
+              for="email"
+            >
+              Email Address
+            </label>
+          </div>
+          <input
+            id="email"
+            name="email"
+            placeholder="e.g. stephenking@lorem.com"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="input field"
+        >
+          <div
+            class="badges"
+          >
+            <label
+              for="phone-number"
+            >
+              Phone Number
+            </label>
+          </div>
+          <input
+            id="phone-number"
+            name="phone"
+            placeholder="e.q. +1 234 567 890"
+            type="tel"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      id="controls"
+    >
+      <button
+        class="button"
+        id="next_step"
+        type="button"
+      >
+        Next Step
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

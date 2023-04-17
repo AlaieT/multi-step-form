@@ -11,7 +11,7 @@ import type { MultiStepFormProps, MFS, FormContextType } from "../../types";
 import styles from "../../styles/components/multiStepFrom.module.scss";
 
 const MultiStepForm = ({
-  steps: { pickAddOns, selectYoutPlan }
+  steps: { pickAddOns, selectYourPlan }
 }: MultiStepFormProps) => {
   const [step, setStep] = useState<number>(0);
   const [form, setForm] = useState<FormContextType["form"]>({
@@ -39,7 +39,7 @@ const MultiStepForm = ({
       plan: "arcade",
       planMode: true,
       customizableProfile: false,
-      onlineSerivce: false,
+      onlineService: false,
       largeStorage: false,
       totalPrice: 0
     },
@@ -94,7 +94,7 @@ const MultiStepForm = ({
           )}
           {step === 1 && !isSubmitted && !isSubmitSuccessful && (
             <Steps.SelectYourPlan
-              plans={selectYoutPlan.plans}
+              plans={selectYourPlan.plans}
               register={register}
               getValues={getValues}
               changeStep={handleChangeStep}
@@ -110,7 +110,7 @@ const MultiStepForm = ({
           )}
           {step === 3 && !isSubmitted && !isSubmitSuccessful && (
             <Steps.Summary
-              plans={selectYoutPlan.plans}
+              plans={selectYourPlan.plans}
               addOns={pickAddOns.addOns}
               isValid={isValid}
               setValue={setValue}

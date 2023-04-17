@@ -16,9 +16,7 @@ const YourInfo = ({
   changeStep
 }: YourInfoProps) => {
   const handleNewStep = async () => {
-    const res = await trigger(["name", "email", "phone"]);
-
-    if (res) changeStep(1);
+    if (await trigger(["name", "email", "phone"])) changeStep(1);
   };
 
   return (
@@ -43,7 +41,7 @@ const YourInfo = ({
             {...register("email")}
             className={styles.field}
             id="email"
-            label="Email Addres"
+            label="Email Address"
             type="email"
             error={errors.email?.message}
             placeholder="e.g. stephenking@lorem.com"

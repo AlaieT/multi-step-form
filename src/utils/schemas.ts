@@ -8,7 +8,7 @@ const multiStepFromSchema = object({
   phone: string().required("Phone is a required field!"),
   plan: string().oneOf(["arcade", "advanced", "pro"]).defined(),
   planMode: boolean().defined(),
-  onlineSerivce: boolean().defined(),
+  onlineService: boolean().defined(),
   largeStorage: boolean().defined(),
   customizableProfile: boolean().defined(),
   totalPrice: number().defined(),
