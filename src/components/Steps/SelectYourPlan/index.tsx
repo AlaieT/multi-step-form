@@ -76,6 +76,8 @@ const SelectYourPlan = ({
             {...register("planMode")}
             id="switch"
             onClick={() => {
+              console.log(planMode);
+              
               setPlanMode((item) => !item);
               setForm({
                 planMode: planMode ? "monthly" : "yearly",
