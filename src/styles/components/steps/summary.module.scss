@@ -6,7 +6,7 @@
 
   & #header {
     width: 100%;
-    margin: 0 0 32px;
+    margin: 0 0 40px;
     grid-area: A;
 
     & h1 {
@@ -19,11 +19,12 @@
       color: $secondary-text-color;
       font-size: 16px;
       font-weight: 400;
+      line-height: 25px;
     }
   }
 
   & #info {
-    padding: 22px 24px;
+    padding: 16px 24px 24px;
     background-color: $select-plan;
     border-radius: 8px;
     grid-area: B;
@@ -53,6 +54,7 @@
         background: none;
         color: $secondary-text-color;
         font-size: 14px;
+        line-height: 20px;
         text-decoration: underline;
 
         &:hover {
@@ -72,6 +74,7 @@
       margin: 20px 0;
       color: $secondary-text-color;
       font-size: 14px;
+      line-height: 20px;
 
       & span {
         &:last-child {
@@ -88,7 +91,9 @@
   }
 
   & #total {
-    padding: 22px 24px;
+    padding: 0 24px;
+    margin: 24px 0 0;
+    line-height: 20px;
     grid-area: C;
 
     @include flex("space-between&center");
@@ -128,7 +133,7 @@
       background-color: $summary-hover-button;
     }
 
-    &:disabled{
+    &:disabled {
       pointer-events: none;
     }
   }
@@ -136,40 +141,60 @@
 
 @media screen and (max-width: 940px) {
   #content {
-    min-width: 343px;
-    padding: 32px 24px 16px;
-    margin: 0 0 160px;
+    width: calc(100% - 32px);
+    min-width: 311px;
+    padding: 32px 24px;
+    margin: 0 0 159px;
     border-radius: 8px;
-    background-color: white;
+    background-color: $background-white;
+    box-shadow: $content-box-shadow;
 
     & #header {
+      margin: 0 0 22px;
+
       & h1 {
         font-size: 24px;
       }
     }
 
-    & #plan {
-      padding: 0 0 22px;
-      border-bottom: 1px solid $shadow-color;
-      display: grid;
-      grid-template-areas:
-        "A C"
-        "B C";
-      justify-content: space-between;
-      align-items: center;
+    & #info {
+      padding: 16px;
 
-      & label {
-        font-size: 14px;
+      & #plan {
+        padding: 0 0 12px;
+        border-bottom: 1px solid $shadow-color;
+        display: grid;
+        grid-template-areas:
+          "A C"
+          "B C";
+        justify-content: space-between;
+        align-items: center;
+        
+        & p {
+          &:first-child {
+            margin: 0 0 3px;
+            font-size: 14px;
+          }
+
+          &:nth-child(3) {
+            font-size: 14px;
+          }
+        }
       }
 
-      & p {
-        &:nth-child(3) {
-          font-size: 14px;
+      & .add_ons {
+        margin: 12px 0;
+
+        &:last-child {
+          margin: 12px 0 0;
         }
       }
     }
 
     & #total {
+      padding: 0 18px;
+      margin: 22px 0 0;
+
       & span:last-child {
         font-size: 16px;
       }
@@ -179,6 +204,6 @@
   #controls {
     height: 72px;
     padding: 0 16px;
-    background-color: white;
+    background-color: $background-white;
   }
 }

@@ -1,6 +1,6 @@
 {
   "steps": {
-    "selectYoutPlan": {
+    "selectYourPlan": {
       "plans": {
         "arcade": {
           "monthly": 9,
@@ -18,7 +18,7 @@
     },
     "pickAddOns": {
       "addOns": {
-        "onlineSerivce": {
+        "onlineService": {
           "monthly": 1,
           "yearly": 10
         },

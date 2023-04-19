@@ -48,11 +48,11 @@ const Summary = ({
             </Button>
             <p>{`$${plans[planType][form.planMode]}/${form.priceMode}`}</p>
           </div>
-          {getValues("onlineSerivce") && (
+          {getValues("onlineService") && (
             <div className={styles.add_ons}>
               <span>Online Service</span>
               <span>
-                {`+ ${addOns.onlineSerivce[form.planMode]}/${form.priceMode}`}
+                {`+ ${addOns.onlineService[form.planMode]}/${form.priceMode}`}
               </span>
             </div>
           )}

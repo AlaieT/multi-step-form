@@ -24,11 +24,13 @@
 
 @media screen and (max-width: 940px) {
   #content {
-    min-width: 343px;
+    width: calc(100% - 32px);
+    min-width: 311px;
     padding: 80px 20px;
     background-color: $background-white;
+    box-shadow: $content-box-shadow;
     border-radius: 8px;
-
+    
     & svg{
       width: 58px;
       height: 58px;

@@ -7,7 +7,7 @@ import Wrap from "../Wrap";
 import type { SelectYourPlanProps } from "../../../types";
 
 import { ReactComponent as IconArcade } from "../../../assets/images/icon-arcade.svg";
-import { ReactComponent as IconAdvacned } from "../../../assets/images/icon-advanced.svg";
+import { ReactComponent as IconAdvanced } from "../../../assets/images/icon-advanced.svg";
 import { ReactComponent as IconPro } from "../../../assets/images/icon-pro.svg";
 
 import styles from "../../../styles/components/steps/selectYourPlan.module.scss";
@@ -50,7 +50,7 @@ const SelectYourPlan = ({
             value="advanced"
             defaultChecked={getValues("plan") === "advanced"}
           />
-          <IconAdvacned width={40} height={40} />
+          <IconAdvanced width={40} height={40} />
           <label htmlFor="advanced">Advanced</label>
           <p>{`$${advanced[form.planMode]}/${form.priceMode}`}</p>
           {planMode && <p>2 months free</p>}

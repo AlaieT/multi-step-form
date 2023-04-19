@@ -9,7 +9,7 @@ import styles from "../../../styles/components/steps/pickAddOns.module.scss";
 import { FormContext } from "../../../utils/context";
 
 const PickAddOns = ({
-  addOns: { onlineSerivce, largeStorage, customizableProfile },
+  addOns: { onlineService, largeStorage, customizableProfile },
   register,
   getValues,
   changeStep
@@ -26,8 +26,8 @@ const PickAddOns = ({
         <div className={styles.option}>
           <input
             type="checkbox"
-            defaultChecked={getValues("onlineSerivce")}
-            {...register("onlineSerivce")}
+            defaultChecked={getValues("onlineService")}
+            {...register("onlineService")}
           />
           <span />
           <div className={styles.title}>
@@ -35,7 +35,7 @@ const PickAddOns = ({
             <p>Access to multiplayer games</p>
           </div>
           +$
-          {`${onlineSerivce[form.planMode]}/${form.priceMode}`}
+          {`${onlineService[form.planMode]}/${form.priceMode}`}
         </div>
         <div className={styles.option}>
           <input
