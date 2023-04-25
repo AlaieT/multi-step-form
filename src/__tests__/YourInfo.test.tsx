@@ -1,42 +1,24 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import {
   render,
   cleanup,
   screen,
   fireEvent,
   renderHook,
-  act,
-  waitFor
+  act
 } from "@testing-library/react";
 
 import YourInfo from "../components/Steps/YourInfo";
-import { multiStepFromSchema } from "../utils/schemas";
 
 afterEach(cleanup);
 
 describe("YourInfo", () => {
   const mockChangeStep = jest.fn();
-  const useFormProps = {
-    resolver: yupResolver(multiStepFromSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      plan: "arcade",
-      planMode: true,
-      customizableProfile: false,
-      onlineService: false,
-      largeStorage: false,
-      totalPrice: 0
-    },
-    mode: "onChange"
-  };
 
   describe("correct render", () => {
     it("should match snapshot", () => {
-      const { result } = renderHook(() => useForm(useFormProps));
+      const { result } = renderHook(() => useForm(global.getUseFormProps()));
 
       expect(
         render(
@@ -54,7 +36,7 @@ describe("YourInfo", () => {
 
   describe("correct functionality", () => {
     it("should does correct input with no errors", async () => {
-      const { result } = renderHook(() => useForm(useFormProps));
+      const { result } = renderHook(() => useForm(global.getUseFormProps()));
 
       const { rerender } = render(
         <YourInfo
@@ -94,7 +76,7 @@ describe("YourInfo", () => {
     });
 
     it("should have proper error message when input is incorrect", async () => {
-      const { result } = renderHook(() => useForm(useFormProps));
+      const { result } = renderHook(() => useForm(global.getUseFormProps()));
       const { rerender } = render(
         <YourInfo
           trigger={result.current.trigger}

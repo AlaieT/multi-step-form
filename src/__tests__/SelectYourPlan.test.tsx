@@ -5,61 +5,28 @@ import {
   screen,
   fireEvent,
   renderHook,
-  waitFor
+  act
 } from "@testing-library/react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 import SelectYourPlan from "../components/Steps/SelectYourPlan";
-import { multiStepFromSchema } from "../utils/schemas";
-import { act } from "react-dom/test-utils";
 
 afterEach(cleanup);
 
 describe("SelectYourPlan", () => {
-  const props = {
-    plans: {
-      arcade: {
-        monthly: 9,
-        yearly: 90
-      },
-      advanced: {
-        monthly: 12,
-        yearly: 120
-      },
-      pro: {
-        monthly: 15,
-        yearly: 150
-      }
-    }
-  };
-  const useFormProps = {
-    resolver: yupResolver(multiStepFromSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      plan: "arcade",
-      planMode: true,
-      customizableProfile: false,
-      onlineService: false,
-      largeStorage: false,
-      totalPrice: 0
-    },
-    mode: "onChange"
-  };
-  const changeStepMock = jest.fn();
+  const mockChangeStep = jest.fn();
+  const props = global.getStepProps();
 
   describe("correct render", () => {
     it("should match snapshot", () => {
-      const { result } = renderHook(() => useForm(useFormProps));
+      const { result } = renderHook(() => useForm(global.getUseFormProps()));
       expect(
         render(
           <SelectYourPlan
             register={result.current.register}
             getValues={result.current.getValues}
             plans={props.plans}
-            changeStep={changeStepMock}
+            changeStep={mockChangeStep}
           />
         ).asFragment()
       ).toMatchSnapshot();
@@ -68,14 +35,14 @@ describe("SelectYourPlan", () => {
 
   describe("correct functionality", () => {
     it("should correct select any plan", async () => {
-      const { result } = renderHook(() => useForm(useFormProps));
+      const { result } = renderHook(() => useForm(global.getUseFormProps()));
 
       render(
         <SelectYourPlan
           register={result.current.register}
           getValues={result.current.getValues}
           plans={props.plans}
-          changeStep={changeStepMock}
+          changeStep={mockChangeStep}
         />
       );
 
@@ -102,14 +69,14 @@ describe("SelectYourPlan", () => {
     });
 
     it("should switch payment mode on switch", async () => {
-      const { result } = renderHook(() => useForm(useFormProps));
+      const { result } = renderHook(() => useForm(global.getUseFormProps()));
 
-      const { rerender } = render(
+      render(
         <SelectYourPlan
           register={result.current.register}
           getValues={result.current.getValues}
           plans={props.plans}
-          changeStep={changeStepMock}
+          changeStep={mockChangeStep}
         />
       );
 

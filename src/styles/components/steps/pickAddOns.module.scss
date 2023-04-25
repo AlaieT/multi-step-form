@@ -41,13 +41,13 @@
       width: 100%;
       margin: 0 0 0 24px;
 
-      & p:first-child {
+      & label:first-child {
         margin: 0 0 5px;
         color: $primary-text-color;
         font-weight: 500;
       }
 
-      & p:last-child {
+      & label:last-child {
         color: $secondary-text-color;
         font-size: 14px;
       }

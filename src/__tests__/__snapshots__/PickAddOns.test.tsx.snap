@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PickAddOns correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="step"
+  >
+    <div
+      id="content"
+    >
+      <div
+        id="header"
+      >
+        <h1>
+          Pick add-ons
+        </h1>
+        <h2>
+          Add-ons help enhance your gaming experience.
+        </h2>
+      </div>
+      <div
+        class="option"
+      >
+        <input
+          id="onlineService"
+          name="onlineService"
+          type="checkbox"
+        />
+        <span />
+        <div
+          class="title"
+        >
+          <label
+            for="onlineService"
+          >
+            Online service
+          </label>
+          <label
+            for="onlineService"
+          >
+            Access to multiplayer games
+          </label>
+        </div>
+        +$10/yr
+      </div>
+      <div
+        class="option"
+      >
+        <input
+          id="largeStorage"
+          name="largeStorage"
+          type="checkbox"
+        />
+        <span />
+        <div
+          class="title"
+        >
+          <label
+            for="largeStorage"
+          >
+            Larger storage
+          </label>
+          <label
+            for="largeStorage"
+          >
+            Extra 1TB of cloud save
+          </label>
+        </div>
+        +$20/yr
+      </div>
+      <div
+        class="option"
+      >
+        <input
+          id="customizableProfile"
+          name="customizableProfile"
+          type="checkbox"
+        />
+        <span />
+        <div
+          class="title"
+        >
+          <label
+            for="customizableProfile"
+          >
+            Customizable profile
+          </label>
+          <label
+            for="customizableProfile"
+          >
+            Custom theme on your profile
+          </label>
+        </div>
+        +$30/yr
+      </div>
+    </div>
+    <div
+      id="controls"
+    >
+      <button
+        class="button"
+        id="go_back"
+        type="button"
+      >
+        Go Back
+      </button>
+      <button
+        class="button"
+        id="next_step"
+        type="button"
+      >
+        Next Step
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

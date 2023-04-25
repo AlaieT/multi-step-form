@@ -25,42 +25,47 @@ const PickAddOns = ({
         </div>
         <div className={styles.option}>
           <input
+            id="onlineService"
             type="checkbox"
             defaultChecked={getValues("onlineService")}
             {...register("onlineService")}
           />
           <span />
           <div className={styles.title}>
-            <p>Online service</p>
-            <p>Access to multiplayer games</p>
+            <label htmlFor="onlineService">Online service</label>
+            <label htmlFor="onlineService">Access to multiplayer games</label>
           </div>
           +$
           {`${onlineService[form.planMode]}/${form.priceMode}`}
         </div>
         <div className={styles.option}>
           <input
+            id="largeStorage"
             type="checkbox"
             defaultChecked={getValues("largeStorage")}
             {...register("largeStorage")}
           />
           <span />
           <div className={styles.title}>
-            <p>Larger storage</p>
-            <p>Extra 1TB of cloud save</p>
+            <label htmlFor="largeStorage">Larger storage</label>
+            <label htmlFor="largeStorage">Extra 1TB of cloud save</label>
           </div>
           +$
           {`${largeStorage[form.planMode]}/${form.priceMode}`}
         </div>
         <div className={styles.option}>
           <input
+            id="customizableProfile"
             type="checkbox"
             defaultChecked={getValues("customizableProfile")}
             {...register("customizableProfile")}
           />
           <span />
           <div className={styles.title}>
-            <p>Customizable profile</p>
-            <p>Custom theme on your profile</p>
+            <label htmlFor="customizableProfile">Customizable profile</label>
+            <label htmlFor="customizableProfile">
+              Custom theme on your profile
+            </label>
           </div>
           +$
           {`${customizableProfile[form.planMode]}/${form.priceMode}`}
