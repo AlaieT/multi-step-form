@@ -11,7 +11,8 @@ import type { MultiStepFormProps, MFS, FormContextType } from "../../types";
 import styles from "../../styles/components/multiStepFrom.module.scss";
 
 const MultiStepForm = ({
-  steps: { pickAddOns, selectYourPlan }
+  steps: { pickAddOns, selectYourPlan },
+  onSubmit
 }: MultiStepFormProps) => {
   const [step, setStep] = useState<number>(0);
   const [form, setForm] = useState<FormContextType["form"]>({
@@ -79,9 +80,8 @@ const MultiStepForm = ({
           </nav>
         </div>
         <form
-          onSubmit={handleSubmit((data) => {
-            console.log(data);
-          })}
+          aria-label="form"
+          onSubmit={handleSubmit((data) => onSubmit(data))}
         >
           {step === 0 && !isSubmitted && !isSubmitSuccessful && (
             <Steps.YourInfo

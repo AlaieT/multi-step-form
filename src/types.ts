@@ -93,6 +93,7 @@ export interface MultiStepFormProps {
     selectYourPlan: Pick<SelectYourPlanProps, "plans">;
     pickAddOns: Pick<PickAddOnsProps, "addOns">;
   };
+  onSubmit: (data: MFS) => void;
 }
 
 /**

@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     const getPageProps = async () => {
-      fetch(`${import.meta.env.BASE_URL}data.json`)
+      fetch(`${import.meta.env.BASE_URL}data/pagePropsMultiStepForm.json`)
         .then((response) => response.json())
         .then((data) => setPageProps(data));
     };
@@ -19,7 +19,16 @@ const App = () => {
     return () => undefined;
   }, []);
 
-  return pageProps && <MultiStepForm steps={pageProps.steps} />;
+  return (
+    pageProps && (
+      <MultiStepForm
+        onSubmit={(data) => {
+          console.log(data);
+        }}
+        steps={pageProps.steps}
+      />
+    )
+  );
 };
 
 export default App;

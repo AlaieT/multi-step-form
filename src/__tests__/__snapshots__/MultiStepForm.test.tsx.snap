@@ -1,0 +1,629 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiStepForm correct render should match snapshot for all steps 1`] = `
+<DocumentFragment>
+  <div
+    id="box"
+  >
+    <div
+      id="steps"
+    >
+      <nav>
+        <ul>
+          <li
+            id="active"
+          >
+            <p>
+              STEP 1
+            </p>
+            <h3>
+              YOUR INFO
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 2
+            </p>
+            <h3>
+              SELECT PLAN
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 3
+            </p>
+            <h3>
+              ADD-ONS
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 4
+            </p>
+            <h3>
+              SUMMARY
+            </h3>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <form
+      aria-label="form"
+    >
+      <div
+        id="step"
+      >
+        <div
+          id="content"
+        >
+          <div
+            id="header"
+          >
+            <h1>
+              Personal info
+            </h1>
+            <h2>
+              Please provide your name, email address, and phone number.
+            </h2>
+          </div>
+          <div
+            id="fields"
+          >
+            <div
+              class="input field"
+            >
+              <div
+                class="badges"
+              >
+                <label
+                  for="name"
+                >
+                  Name
+                </label>
+              </div>
+              <input
+                id="name"
+                name="name"
+                placeholder="e.g. Stephen King"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="input field"
+            >
+              <div
+                class="badges"
+              >
+                <label
+                  for="email"
+                >
+                  Email Address
+                </label>
+              </div>
+              <input
+                id="email"
+                name="email"
+                placeholder="e.g. stephenking@lorem.com"
+                type="email"
+                value=""
+              />
+            </div>
+            <div
+              class="input field"
+            >
+              <div
+                class="badges"
+              >
+                <label
+                  for="phone-number"
+                >
+                  Phone Number
+                </label>
+              </div>
+              <input
+                id="phone-number"
+                name="phone"
+                placeholder="e.q. +1 234 567 890"
+                type="tel"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          id="controls"
+        >
+          <button
+            class="button"
+            id="next_step"
+            type="button"
+          >
+            Next Step
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MultiStepForm correct render should match snapshot for all steps 2`] = `
+<DocumentFragment>
+  <div
+    id="box"
+  >
+    <div
+      id="steps"
+    >
+      <nav>
+        <ul>
+          <li>
+            <p>
+              STEP 1
+            </p>
+            <h3>
+              YOUR INFO
+            </h3>
+          </li>
+          <li
+            id="active"
+          >
+            <p>
+              STEP 2
+            </p>
+            <h3>
+              SELECT PLAN
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 3
+            </p>
+            <h3>
+              ADD-ONS
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 4
+            </p>
+            <h3>
+              SUMMARY
+            </h3>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <form
+      aria-label="form"
+    >
+      <div
+        id="step"
+      >
+        <div
+          id="content"
+        >
+          <div
+            id="header"
+          >
+            <h1>
+              Select your plan
+            </h1>
+            <h2>
+              You have the option of monthly or yearly billing.
+            </h2>
+          </div>
+          <div
+            class="option"
+          >
+            <input
+              checked=""
+              id="arcade"
+              name="plan"
+              type="radio"
+              value="arcade"
+            />
+            <div
+              height="40"
+              width="40"
+            />
+            <label
+              for="arcade"
+            >
+              Arcade
+            </label>
+            <p>
+              $90/yr
+            </p>
+            <p>
+              2 months free
+            </p>
+          </div>
+          <div
+            class="option"
+          >
+            <input
+              id="advanced"
+              name="plan"
+              type="radio"
+              value="advanced"
+            />
+            <div
+              height="40"
+              width="40"
+            />
+            <label
+              for="advanced"
+            >
+              Advanced
+            </label>
+            <p>
+              $120/yr
+            </p>
+            <p>
+              2 months free
+            </p>
+          </div>
+          <div
+            class="option"
+          >
+            <input
+              id="pro"
+              name="plan"
+              type="radio"
+              value="pro"
+            />
+            <div
+              height="40"
+              width="40"
+            />
+            <label
+              for="pro"
+            >
+              Pro
+            </label>
+            <p>
+              $150/yr
+            </p>
+            <p>
+              2 months free
+            </p>
+          </div>
+          <div
+            id="switch"
+          >
+            <label
+              for="switch"
+            >
+              Monthly
+            </label>
+            <div
+              class="switch"
+            >
+              <input
+                checked=""
+                id="switch"
+                name="planMode"
+                type="checkbox"
+              />
+            </div>
+            <label
+              for="switch"
+              id="selected"
+            >
+              Yearly
+            </label>
+          </div>
+        </div>
+        <div
+          id="controls"
+        >
+          <button
+            class="button"
+            id="go_back"
+            type="button"
+          >
+            Go Back
+          </button>
+          <button
+            class="button"
+            id="next_step"
+            type="button"
+          >
+            Next Step
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MultiStepForm correct render should match snapshot for all steps 3`] = `
+<DocumentFragment>
+  <div
+    id="box"
+  >
+    <div
+      id="steps"
+    >
+      <nav>
+        <ul>
+          <li>
+            <p>
+              STEP 1
+            </p>
+            <h3>
+              YOUR INFO
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 2
+            </p>
+            <h3>
+              SELECT PLAN
+            </h3>
+          </li>
+          <li
+            id="active"
+          >
+            <p>
+              STEP 3
+            </p>
+            <h3>
+              ADD-ONS
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 4
+            </p>
+            <h3>
+              SUMMARY
+            </h3>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <form
+      aria-label="form"
+    >
+      <div
+        id="step"
+      >
+        <div
+          id="content"
+        >
+          <div
+            id="header"
+          >
+            <h1>
+              Pick add-ons
+            </h1>
+            <h2>
+              Add-ons help enhance your gaming experience.
+            </h2>
+          </div>
+          <div
+            class="option"
+          >
+            <input
+              id="onlineService"
+              name="onlineService"
+              type="checkbox"
+            />
+            <span />
+            <div
+              class="title"
+            >
+              <label
+                for="onlineService"
+              >
+                Online service
+              </label>
+              <label
+                for="onlineService"
+              >
+                Access to multiplayer games
+              </label>
+            </div>
+            +$10/yr
+          </div>
+          <div
+            class="option"
+          >
+            <input
+              id="largeStorage"
+              name="largeStorage"
+              type="checkbox"
+            />
+            <span />
+            <div
+              class="title"
+            >
+              <label
+                for="largeStorage"
+              >
+                Larger storage
+              </label>
+              <label
+                for="largeStorage"
+              >
+                Extra 1TB of cloud save
+              </label>
+            </div>
+            +$20/yr
+          </div>
+          <div
+            class="option"
+          >
+            <input
+              id="customizableProfile"
+              name="customizableProfile"
+              type="checkbox"
+            />
+            <span />
+            <div
+              class="title"
+            >
+              <label
+                for="customizableProfile"
+              >
+                Customizable profile
+              </label>
+              <label
+                for="customizableProfile"
+              >
+                Custom theme on your profile
+              </label>
+            </div>
+            +$30/yr
+          </div>
+        </div>
+        <div
+          id="controls"
+        >
+          <button
+            class="button"
+            id="go_back"
+            type="button"
+          >
+            Go Back
+          </button>
+          <button
+            class="button"
+            id="next_step"
+            type="button"
+          >
+            Next Step
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MultiStepForm correct render should match snapshot for all steps 4`] = `
+<DocumentFragment>
+  <div
+    id="box"
+  >
+    <div
+      id="steps"
+    >
+      <nav>
+        <ul>
+          <li>
+            <p>
+              STEP 1
+            </p>
+            <h3>
+              YOUR INFO
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 2
+            </p>
+            <h3>
+              SELECT PLAN
+            </h3>
+          </li>
+          <li>
+            <p>
+              STEP 3
+            </p>
+            <h3>
+              ADD-ONS
+            </h3>
+          </li>
+          <li
+            id="active"
+          >
+            <p>
+              STEP 4
+            </p>
+            <h3>
+              SUMMARY
+            </h3>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <form
+      aria-label="form"
+    >
+      <div
+        id="step"
+      >
+        <div
+          id="content"
+        >
+          <div
+            id="header"
+          >
+            <h1>
+              Finishing up
+            </h1>
+            <h2>
+              Double-check everything looks OK before confirming.
+            </h2>
+          </div>
+          <div
+            id="info"
+          >
+            <div
+              id="plan"
+            >
+              <p>
+                arcade yearly
+              </p>
+              <button
+                class="button"
+                id="change_plan"
+                type="button"
+              >
+                Change
+              </button>
+              <p>
+                $90/yr
+              </p>
+            </div>
+          </div>
+          <div
+            id="total"
+          >
+            <span>
+              Total (per year)
+            </span>
+            <span>
+              $90/yr
+            </span>
+          </div>
+        </div>
+        <div
+          id="controls"
+        >
+          <button
+            class="button"
+            id="go_back"
+            type="button"
+          >
+            Go Back
+          </button>
+          <button
+            class="button"
+            id="next_step"
+            type="submit"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

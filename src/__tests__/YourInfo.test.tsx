@@ -38,7 +38,7 @@ describe("YourInfo", () => {
     it("should does correct input with no errors", async () => {
       const { result } = renderHook(() => useForm(global.getUseFormProps()));
 
-      const { rerender } = render(
+      render(
         <YourInfo
           trigger={result.current.trigger}
           register={result.current.register}

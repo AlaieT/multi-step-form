@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary correct render should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="step"
+  >
+    <div
+      id="content"
+    >
+      <div
+        id="header"
+      >
+        <h1>
+          Finishing up
+        </h1>
+        <h2>
+          Double-check everything looks OK before confirming.
+        </h2>
+      </div>
+      <div
+        id="info"
+      >
+        <div
+          id="plan"
+        >
+          <p>
+            arcade yearly
+          </p>
+          <button
+            class="button"
+            id="change_plan"
+            type="button"
+          >
+            Change
+          </button>
+          <p>
+            $90/yr
+          </p>
+        </div>
+      </div>
+      <div
+        id="total"
+      >
+        <span>
+          Total (per year)
+        </span>
+        <span>
+          $90/yr
+        </span>
+      </div>
+    </div>
+    <div
+      id="controls"
+    >
+      <button
+        class="button"
+        id="go_back"
+        type="button"
+      >
+        Go Back
+      </button>
+      <button
+        class="button"
+        id="next_step"
+        type="submit"
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
